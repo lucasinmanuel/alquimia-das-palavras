@@ -25,4 +25,12 @@
 .iframe-home {
   width: 90%;
   height: 450px;
+  border: 8px solid #453953;
+}
+
+.placa-doar {
+  background-color: #25161b;
+  width: 70%;
+  position: relative;
+  top: -80px;
 }

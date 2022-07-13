@@ -4,10 +4,9 @@
   }
 }
 
-/* @media screen and (max-width: 1000px) {
-  .iframe-mediaQuery {
-    width: 559px;
-    height: 395px;
+@media screen and (max-width: 768px) {
+  .iframe-home {
+    height: 350px;
   }
-} */
+}
 /*FIM PÁGINA HOME*/
