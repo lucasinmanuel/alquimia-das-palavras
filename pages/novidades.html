@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Novidades</title>
+
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body style="background-color: #f3cba5">
+    <!--Inicio main-->
+    <main class="box">
+      <!--Inicio header-->
+      <header
+        style="border-bottom: 3px solid #453953"
+        class="navbar navbar-expand-lg navbar-light shadow"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img width="200px" src="./Assets/logo.png" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse d-lg-flex justify-content-lg-between"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav text-center">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./mecanicas.html">Mecânicas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="novidades.html">Novidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./quemsomos.html">Quem somos</a>
+              </li>
+            </ul>
+            <div class="d-flex justify-content-center align-self-center">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="./login.html">
+                    <img
+                      width="22px"
+                      class="me-1 mb-1"
+                      src="./Assets/login.svg"
+                      alt="Ícone login"
+                    />
+                    Entrar
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--container-->
+      </header>
+      <!--Inicio header-->
+
+
+       <!--Inicio card-->
+       <section
+       class="row d-flex justify-content-center align-items-center"
+       style="
+         width: 100%;
+         height: 900px;
+         background-image: url('./Assets/bg-home.svg');
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+       "
+     >
+
+      <!--Inicio title-->
+      <div class="d-flex justify-content-center mt-5">
+        <img src="./Assets/banner-title.png" alt="">
+      </div>
+      <!--Fim title-->
+
+      <!--Inicio carrossel-->
+      <div class="row">
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide col-5 mx-auto"
+          data-bs-ride="false"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./Assets/img-carrossel.png"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Não perca as novas atualizações!</h5>
+                <p>
+                  Some representative placeholder content for the first slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./Assets/img-carrossel2.png"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>saiba mais</h5>
+                <p>
+                  Some representative placeholder content for the second slide.
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./Assets/img-carrossel3.png"
+                class="d-block w-100"
+                alt="..."
+              />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Divirta-se com a gente!</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <!--Fim carrossel-->
+
+        <!--Inicio form novidade-->
+        <div
+          class="col-7 mb-3"
+        >
+          <div class="p-5 rounded m-4" style="background-color: #25161b">
+            <p class="display-6 text-light">
+              Quer saber de tudo em primeira mão?
+            </p>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Deixe aqui o seu e-mail"
+            />
+          </div>
+        </div>
+        <!--Fim form novidade-->
+
+      </section>
+      <!--Fim card-->
+
+      <!--Inicio footer-->
+      <footer style="border-top: 3px solid #453953">
+        <div class="container py-4">
+          <div class="row mt-3">
+            <div class="col-12 text-center">
+              <a class="navbar-brand" href="/"
+                ><img src="./Assets/logo.png" width="200px"
+              /></a>
+            </div>
+
+            <!--col-->
+          </div>
+
+          <!--row-->
+
+          <div class="row mt-5">
+            <div class="col-12 col-sm-6 col-xl-3 text-center text-xl-start">
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Home</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Mecânica</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Quem somos</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Novidades</a
+              >
+            </div>
+
+            <!--col-->
+
+            <div class="col-12 col-sm-6 col-xl-3 text-center text-xl-start">
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Jogos divertidos</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >jogos educativos</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Jogos faceis</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >jogos para crianças</a
+              >
+            </div>
+
+            <!--col-->
+
+            <div class="col-12 col-sm-6 col-xl-3 text-center text-xl-start">
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Aprenda mais sobre dislexia</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Aprenda mais jogando</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Aprenda se divertindo</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Aprenda de maneira lúdica</a
+              >
+            </div>
+
+            <!--col-->
+
+            <div class="col-12 col-sm-6 col-xl-3 text-center text-xl-start">
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Jogos acessíveis</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Jogos especiais</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Jogos para todos</a
+              >
+
+              <a class="d-block text-muted text-decoration-none mb-3" href="#"
+                >Jogos imperdíveis</a
+              >
+            </div>
+
+            <!--col-->
+          </div>
+
+          <!--row-->
+
+          <div class="row">
+            <div class="col-12 text-center mt-5">
+              <h3 class="text-muted mb-4">Nos siga nas redes sociais!</h3>
+
+              <a
+                href="https://www.facebook.com/"
+                class="d-inline-block mx-2 mb-2"
+                target="_blank"
+                ><img
+                  width="50px"
+                  src="./Assets/icon-face.png"
+                  alt="ícone facebook"
+                />
+              </a>
+
+              <a
+                href="https://www.instagram.com/"
+                class="d-inline-block mx-2 mb-2"
+                target="_blank"
+                ><img
+                  width="50px"
+                  src="./Assets/icon-insta.png"
+                  alt="ícone instagram"
+              /></a>
+
+              <a
+                href="https://twitter.com/"
+                class="d-inline-block mx-2 mb-2"
+                target="_blank"
+                ><img
+                  width="50px"
+                  src="./Assets/icon-twitter.png"
+                  alt="ícone twitter"
+              /></a>
+
+              <a
+                href="https://www.tiktok.com/"
+                class="d-inline-block mx-2 mb-2"
+                target="_blank"
+                ><img
+                  width="50px"
+                  src="./Assets/icon-tiktoc.png"
+                  alt="ícone tik tok"
+              /></a>
+            </div>
+            <!--col-->
+          </div>
+          <!--row-->
+
+          <div class="row text-center mt-3">
+            <div class="col-12">
+              <p class="text-muted fs-5">Todos os direitos reservados</p>
+            </div>
+            <!--col-->
+          </div>
+          <!--row-->
+        </div>
+        <!--container-->
+      </footer>
+      <!--Fim footer-->
+    </main>
+    <!--Fim Main-->
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

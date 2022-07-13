@@ -1,0 +1,28 @@
+@import "/fonts/OpenDyslexic-Regular.otf";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: OpenDyslexic;
+}
+
+.bg-color-body {
+  background: #f3cba5;
+}
+
+.bg-color-roxo {
+  background: #975a5e;
+}
+
+.bg-image-home {
+  background-image: url("/assets/backgrounds/bg-home.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.iframe-home {
+  width: 90%;
+  height: 450px;
+}

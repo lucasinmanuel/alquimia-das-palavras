@@ -1,0 +1,13 @@
+@media screen and (max-width: 1200px) {
+  .bg-image-home {
+    background-image: none;
+  }
+}
+
+/* @media screen and (max-width: 1000px) {
+  .iframe-mediaQuery {
+    width: 559px;
+    height: 395px;
+  }
+} */
+/*FIM PÁGINA HOME*/
