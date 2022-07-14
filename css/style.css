@@ -8,11 +8,15 @@
 }
 
 .bg-color-body {
-  background: #f3cba5;
+  background-color: #f3cba5;
 }
 
 .bg-color-roxo {
-  background: #975a5e;
+  background-color: #975a5e;
+}
+
+.bg-color-violeta {
+  background-color: #25161b;
 }
 
 .bg-image-home {
@@ -33,4 +37,28 @@
   width: 70%;
   position: relative;
   top: -80px;
+}
+
+/*PÁGINA DE NOVIDADES*/
+
+.bg-image-novidades {
+  background-image: url("../assets/backgrounds/bg-home.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.border-slide {
+  border: 8px solid #453953;
+}
+
+.btn-roxo {
+  background-color: #975a5e;
+  border: 0;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-roxo:hover {
+  background-color: #453953;
 }
