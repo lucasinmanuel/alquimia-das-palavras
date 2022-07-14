@@ -1,6 +1,7 @@
 @font-face {
   font-family: OpenDyslexic;
-  src: url(../fonts/OpenDyslexic-Regular.otf) format("otf");
+  src: url(https://github.com/LucasInmanuel/projeto-final-recode-2022/raw/main/fonts/OpenDyslexic-Regular.otf)
+    format("otf");
 }
 
 * {
