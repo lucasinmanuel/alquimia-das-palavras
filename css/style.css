@@ -1,16 +1,8 @@
-@font-face {
-  font-family: OpenDyslexic;
-  src: url(../fonts/OpenDyslexic-Regular.woff2) format("woff2");
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: OpenDyslexic;
-}
-
-body {
 }
 
 .bg-color-body {
