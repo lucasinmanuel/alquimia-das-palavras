@@ -1,6 +1,6 @@
 @font-face {
   font-family: OpenDyslexic;
-  src: url("../fonts/OpenDyslexic-Regular.otf") format("otf");
+  src: url(../fonts/OpenDyslexic-Regular.otf) format("otf");
 }
 
 * {
@@ -8,6 +8,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: OpenDyslexic;
+}
+
+body {
 }
 
 .bg-color-body {
