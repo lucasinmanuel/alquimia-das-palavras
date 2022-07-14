@@ -1,9 +1,3 @@
-@font-face {
-  font-family: OpenDyslexic;
-  src: url(https://github.com/LucasInmanuel/projeto-final-recode-2022/raw/main/fonts/OpenDyslexic-Regular.otf)
-    format("otf");
-}
-
 * {
   margin: 0;
   padding: 0;
