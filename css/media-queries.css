@@ -2,6 +2,9 @@
   .bg-image-home {
     background-image: none;
   }
+  .bg-image-novidades {
+    background-image: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
