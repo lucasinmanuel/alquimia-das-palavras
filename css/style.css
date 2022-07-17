@@ -6,6 +6,17 @@
   font-style: normal;
 }
 
+@keyframes animacao {
+  
+
+  50% {transform: translatey(-15px);}
+
+  100% {transform: translatey(0);}
+}
+.animacao {
+  animation: animacao 2s; 
+}
+
 * {
   margin: 0;
   padding: 0;
