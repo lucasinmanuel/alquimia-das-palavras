@@ -9,18 +9,18 @@
                 <a href="https://github.com/LucasInmanuel">
                     <img src="https://github.com/LucasInmanuel.png" />
                 </a>
-                <p>Lucas Emanuel</p>
+                <h3>Lucas Emanuel</h3>
             </td>
             <td align="center">
                 <a href="https://github.com/Larissalaviniaba">
                     <img src="https://github.com/Larissalaviniaba.png" />
                 </a>
-                <p>Larissa Lavinia</p>
+                <h3>Larissa Lavinia</h3>
             </td>
             <td align="center">
                 <a href=""></a>
                 <img src="https://github.com/FabricioRecode.png" />
-                <p>Fabrício José</p>
+                <h3>Fabrício José</h3>
             </td>
         </tr>
         <tr>
@@ -28,19 +28,19 @@
                 <a href="https://github.com/Sarah-Salles">
                     <img src="https://github.com/Sarah-Salles.png" />
                 </a>
-                <p>Sara Salles</p>
+                <h3>Sara Salles</h3>
             </td>
             <td align="center">
                 <a href="https://github.com/brunoaraujo7">
                     <img src="https://github.com/brunoaraujo7.png" />
                 </a>
-                <p>Bruno Araujo</p>
+                <h3>Bruno Araujo</h3>
             </td>
             <td align="center">
                 <a href="https://github.com/talesdeoliveira">
                     <img src="https://github.com/talesdeoliveira.png" />
                 </a>
-                <p>Tales de Oliveira</p>
+                <h3>Tales de Oliveira</h3>
             </td>
         </tr>
     </tbody>
