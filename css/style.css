@@ -7,14 +7,16 @@
 }
 
 @keyframes animacao {
-  
+  50% {
+    transform: translatey(-15px);
+  }
 
-  50% {transform: translatey(-15px);}
-
-  100% {transform: translatey(0);}
+  100% {
+    transform: translatey(0);
+  }
 }
 .animacao {
-  animation: animacao 2s; 
+  animation: animacao 2s;
 }
 
 * {
@@ -68,7 +70,7 @@
 /*PÁGINA DE NOVIDADES*/
 
 .bg-image-novidades {
-  background-image: url("../assets/backgrounds/bg-home.svg");
+  background-image: url("../assets/backgrounds/bg-novidades.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
