@@ -6,12 +6,12 @@
 	</defs>
 	<style>
 	</style>
-	<g id="img_left" style="opacity: .7">
-		<use id="vinhas" href="#img1" transform="matrix(1,0,0,1,19,371)"/>
-		<use id="Pasta 1" href="#img2" transform="matrix(1,0,0,1,20,23)"/>
+	<g id="img_left" style="opacity: .5">
+		<use id="img1" href="#img1" transform="matrix(1,0,0,1,19,371)"/>
+		<use id="img2" href="#img2" transform="matrix(1,0,0,1,20,23)"/>
 	</g>
-	<g id="img_right" style="opacity: .7">
-		<use id="vinhas" href="#img1" transform="matrix(-1,0,0,1,1358,371)"/>
-		<use id="Pasta 1" href="#img2" transform="matrix(-1,0,0,1,1357,23)"/>
+	<g id="img_right" style="opacity: .5">
+		<use id="img1" href="#img1" transform="matrix(-1,0,0,1,1358,371)"/>
+		<use id="img2" href="#img2" transform="matrix(-1,0,0,1,1357,23)"/>
 	</g>
 </svg>

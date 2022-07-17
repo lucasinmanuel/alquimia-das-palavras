@@ -56,6 +56,15 @@
   top: -80px;
 }
 
+/*PÁGINA DE MECÂNICAS*/
+
+.bg-image-mecanicas {
+  background-image: url("../assets/backgrounds/bg-mecânicas.svg");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
 /*PÁGINA DE NOVIDADES*/
 
 .bg-image-novidades {
@@ -83,5 +92,4 @@
 .border-acordion {
   border-left: 2px solid #975a5e !important;
   border-right: 2px solid #975a5e !important;
-
 }
