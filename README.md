@@ -1,5 +1,5 @@
 <h1>Projeto Entendicio</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ab voluptate mollitia blanditiis animi nobis repellat eligendi hic repudiandae velit.</p>
+<p>Este projeto foi criado para o programa Recode Pro 2022. Um projeto colaborativo criado para ajudar pessoas com baixa proficiência em leitura, com foco no público com dislexia.</p>
 
 <h2>Colaboradores</h2>
 <table border>
