@@ -1,6 +1,9 @@
 <h1>Projeto Entendicio</h1>
 <p>Este projeto foi criado para o programa Recode Pro 2022. Um projeto colaborativo criado para ajudar pessoas com baixa proficiência em leitura, com foco no público com dislexia.</p>
 
+<img src="./assets/img-readme.png" />
+<a href="https://projeto-final-recode-2022.vercel.app/">Link para o site</a>
+
 <h2>Colaboradores</h2>
 <table border>
     <tbody>
