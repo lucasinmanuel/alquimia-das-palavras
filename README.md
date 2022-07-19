@@ -82,7 +82,7 @@
     <br />
     <span>Em pesquisa online por informações que embasassem o tema escolhido, nos deparamos com o seguinte parecer integrado no Portal do Mec: “Segundo a Associação Brasileira de Dislexia (ABD), a dislexia é o distúrbio de maior incidência nas salas de aula e atinge entre 5% e 17% da população mundial. A ABD define dislexia como um distúrbio ou transtorno de aprendizagem na área da leitura, escrita e soletração.”<br />
     Apoiado nessa informação identificamos que as crianças e adolescentes em idade escolar com transtorno de aprendizagem são diretamente afetadas e necessitam de maior atenção e suporte para vencer os desafios provenientes da dislexia.
-    O Portal do Mec (Disponível em "portal.mec.gov.br". Acesso em 24, junho, 2022.) é referência, pois é dedicado a regulamentação do ensino superior no Brasil, assim como pesquisa e extensão universitárias que buscam o progresso e benefício da população.<br />
+    O Portal do Mec (Disponível em "www.portal.mec.gov.br". Acesso em 24, junho, 2022.) é referência, pois é dedicado a regulamentação do ensino superior no Brasil, assim como pesquisa e extensão universitárias que buscam o progresso e benefício da população.<br />
     A Associação Brasileira de Dislexia (Disponível em "www.dislexia.org.br". Acesso em 24, junho, 2022.) é referência, pois há mais de trinta anos vem promovendo o entendimento acerca da dislexia.</span>
 </p>
 <p>
