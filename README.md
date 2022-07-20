@@ -31,7 +31,7 @@
                 <a href="https://github.com/Sarah-Salles">
                     <img src="https://github.com/Sarah-Salles.png" />
                 </a>
-                <h3>Sara Salles</h3>
+                <h3>Sarah Salles</h3>
             </td>
             <td align="center">
                 <a href="https://github.com/brunoaraujo7">
