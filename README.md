@@ -1,4 +1,4 @@
-<h1>Projeto Entendicio</h1>
+<h1>Projeto Alquimia das Palavras</h1>
 <p>Este projeto foi criado para o programa Recode Pro 2022. Um projeto colaborativo criado para ajudar pessoas com baixa proficiência em leitura, com foco no público com dislexia.</p>
 
 <img src="./front-end/images/img-readme.png" />
