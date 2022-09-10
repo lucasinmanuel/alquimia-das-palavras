@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "open-dyslexic";
+  src: url("../fonts/opendyslexic-regular-webfont.woff2") format("woff2"),
+    url("../fonts/opendyslexic-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes animacao {
+  50% {
+    transform: translatey(-15px);
+  }
+
+  100% {
+    transform: translatey(0);
+  }
+}
+
+.animacao {
+  animation: animacao 2s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "open-dyslexic";
+}
+
+.bg-color-body {
+  background-color: #f3cba5;
+}
+
+.bg-color-roxo {
+  background-color: #975a5e;
+}
+
+.bg-color-violeta {
+  background-color: #25161b;
+}
+
+.bg-image-home {
+  background-image: url("../images/backgrounds/bg-home.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.iframe-home {
+  width: 90%;
+  height: 450px;
+  border: 8px solid #453953;
+}
+
+.placa-doar {
+  background-color: #25161b;
+  width: 70%;
+  position: relative;
+  top: -80px;
+}
+
+/*PÁGINA DE MECÂNICAS*/
+
+.bg-image-mecanicas {
+  background-image: url("../images/backgrounds/bg-mecânicas.svg");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+/*PÁGINA DE NOVIDADES*/
+
+.bg-image-novidades {
+  background-image: url("../images/backgrounds/bg-novidades.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.border-slide {
+  border: 8px solid #975a5e;
+}
+
+.btn-roxo {
+  background-color: #975a5e;
+  border: 0;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-roxo:hover {
+  background-color: #453953;
+}
+
+.border-acordion {
+  border-left: 2px solid #975a5e !important;
+  border-right: 2px solid #975a5e !important;
+}
+
+/*PÁGINA QUEM SOMOS*/
+
+.border-video {
+  width: 100%;
+  border: 8px solid #975a5e;
+  outline: none;
+}
