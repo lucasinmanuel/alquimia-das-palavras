@@ -15,6 +15,7 @@
     transform: translatey(0);
   }
 }
+
 .animacao {
   animation: animacao 2s;
 }
@@ -39,7 +40,7 @@
 }
 
 .bg-image-home {
-  background-image: url("/assets/backgrounds/bg-home.svg");
+  background-image: url("../images/backgrounds/bg-home.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,7 +62,7 @@
 /*PÁGINA DE MECÂNICAS*/
 
 .bg-image-mecanicas {
-  background-image: url("../assets/backgrounds/bg-mecânicas.svg");
+  background-image: url("../images/backgrounds/bg-mecânicas.svg");
   background-size: contain;
   background-position: top;
   background-repeat: no-repeat;
@@ -70,7 +71,7 @@
 /*PÁGINA DE NOVIDADES*/
 
 .bg-image-novidades {
-  background-image: url("../assets/backgrounds/bg-novidades.svg");
+  background-image: url("../images/backgrounds/bg-novidades.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
