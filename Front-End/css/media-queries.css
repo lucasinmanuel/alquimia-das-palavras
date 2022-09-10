@@ -2,9 +2,11 @@
   .bg-image-home {
     background-image: none;
   }
+
   .bg-image-mecanicas {
     background-image: none;
   }
+
   .bg-image-novidades {
     background-image: none;
   }
@@ -15,4 +17,5 @@
     height: 350px;
   }
 }
+
 /*FIM PÁGINA HOME*/
