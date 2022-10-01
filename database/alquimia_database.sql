@@ -36,4 +36,4 @@ FOREIGN KEY (id_usuario) REFERENCES usuarios (id)
 select * from usuarios;
 select * from game_save;
 
-
+insert into usuario values(null,"luquinha","2002-09-30","2002-02-11","LUCAS@GMAIL.COM","masculino","brasileiro","lucas emanuel","123");

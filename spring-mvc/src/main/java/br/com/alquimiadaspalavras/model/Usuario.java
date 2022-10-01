@@ -2,25 +2,39 @@ package br.com.alquimiadaspalavras.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import javax.persistence.*;
+import java.time.LocalDate;
 
+@Entity
+@Table
 public class Usuario {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(name = "nome",length = 100,nullable = false)
     private String nome;
+    @Column(name = "apelido",length = 20,unique = true)
     private String apelido;
-    private Date data_cadastro;
+    @Column(name = "data_cadastro",nullable = false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate data_cadastro;
+    @Column(name = "email",length = 50,nullable = false,unique = true)
     private String email;
+    @Column(name = "senha",nullable = false)
     private String senha;
+    @Column(name = "nacionalidade",length = 30,nullable = false)
     private String nacionalidade;
+    @Column(name = "genero",length = 20,nullable = false)
     private String genero;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date data_nascimento;
+    @Column(name = "data_nascimento",nullable = false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate data_nascimento;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -40,11 +54,11 @@ public class Usuario {
         this.apelido = apelido;
     }
 
-    public Date getData_cadastro() {
+    public LocalDate getData_cadastro() {
         return data_cadastro;
     }
 
-    public void setData_cadastro(Date data_cadastro) {
+    public void setData_cadastro(LocalDate data_cadastro) {
         this.data_cadastro = data_cadastro;
     }
 
@@ -80,11 +94,11 @@ public class Usuario {
         this.genero = genero;
     }
 
-    public Date getData_nascimento() {
+    public LocalDate getData_nascimento() {
         return data_nascimento;
     }
 
-    public void setData_nascimento(Date data_nascimento) {
+    public void setData_nascimento(LocalDate data_nascimento) {
         this.data_nascimento = data_nascimento;
     }
 }

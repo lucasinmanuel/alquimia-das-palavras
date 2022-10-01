@@ -1,62 +1,70 @@
 package br.com.alquimiadaspalavras.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "gamesave")
 public class GameSave {
-    private int id;
-    private int id_usuario;
-    private int dia;
-    private int moeda_bronze;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    @Column(name = "id_usuario",nullable = false)
+    private Integer id_usuario;
+    @Column(name = "dia",nullable = false)
+    private Integer dia;
+    @Column(name = "npc",nullable = false)
+    private Integer npc;
+    @Column(name = "moeda_bronze")
+    private Integer moeda_bronze;
+    @Column(name = "ingredientes")
     private String ingredientes;
-    private int moeda_prata;
-    private int moeda_ouro;
+    @Column(name = "moeda_prata")
+    private Integer moeda_prata;
+    @Column(name = "moeda_ouro")
+    private Integer moeda_ouro;
+    @Column(name = "itens")
     private String itens;
+    @Column(name = "potions")
     private String potions;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getId_usuario() {
+    public Integer getId_usuario() {
         return id_usuario;
     }
 
-    public void setId_usuario(int id_usuario) {
+    public void setId_usuario(Integer id_usuario) {
         this.id_usuario = id_usuario;
     }
 
-    public int getDia() {
+    public Integer getDia() {
         return dia;
     }
 
-    public void setDia(int dia) {
+    public void setDia(Integer dia) {
         this.dia = dia;
     }
 
-    public int getMoeda_bronze() {
+    public Integer getNpc() {
+        return npc;
+    }
+
+    public void setNpc(Integer npc) {
+        this.npc = npc;
+    }
+
+    public Integer getMoeda_bronze() {
         return moeda_bronze;
     }
 
-    public void setMoeda_bronze(int moeda_bronze) {
+    public void setMoeda_bronze(Integer moeda_bronze) {
         this.moeda_bronze = moeda_bronze;
-    }
-
-    public int getMoeda_prata() {
-        return moeda_prata;
-    }
-
-    public void setMoeda_prata(int moeda_prata) {
-        this.moeda_prata = moeda_prata;
-    }
-
-    public int getMoeda_ouro() {
-        return moeda_ouro;
-    }
-
-    public void setMoeda_ouro(int moeda_ouro) {
-        this.moeda_ouro = moeda_ouro;
     }
 
     public String getIngredientes() {
@@ -65,6 +73,22 @@ public class GameSave {
 
     public void setIngredientes(String ingredientes) {
         this.ingredientes = ingredientes;
+    }
+
+    public Integer getMoeda_prata() {
+        return moeda_prata;
+    }
+
+    public void setMoeda_prata(Integer moeda_prata) {
+        this.moeda_prata = moeda_prata;
+    }
+
+    public Integer getMoeda_ouro() {
+        return moeda_ouro;
+    }
+
+    public void setMoeda_ouro(Integer moeda_ouro) {
+        this.moeda_ouro = moeda_ouro;
     }
 
     public String getItens() {

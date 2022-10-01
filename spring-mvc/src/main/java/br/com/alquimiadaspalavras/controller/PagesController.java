@@ -1,11 +1,13 @@
 package br.com.alquimiadaspalavras.controller;
 
+import br.com.alquimiadaspalavras.model.Usuario;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PagesController {
-    @GetMapping(path = "/")
+    @GetMapping(path = {"","/"})
     public String home(){
         return "/pages/home";
     }
@@ -22,8 +24,14 @@ public class PagesController {
         return "/pages/about";
     }
     @GetMapping(path = "/login")
-    public String login(){
+    public String login(Model model){
+        model.addAttribute("usuario",new Usuario());
         return "/pages/login";
+    }
+    @GetMapping(path = "/signup")
+    public String signup(Model model){
+        model.addAttribute("usuario",new Usuario());
+        return "/pages/signup";
     }
     @GetMapping(path = "/admin")
     public String dashboard(){

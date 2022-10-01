@@ -1,56 +1,65 @@
 package br.com.alquimiadaspalavras.controller;
 
-import br.com.alquimiadaspalavras.dao.GameSaveDAO;
-import br.com.alquimiadaspalavras.dao.UsuarioDAO;
-import br.com.alquimiadaspalavras.model.GameSave;
 import br.com.alquimiadaspalavras.model.Usuario;
+import br.com.alquimiadaspalavras.repository.UsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
+@RequestMapping(path = "/usuario")
 public class UsuarioController {
-    private UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-    @GetMapping(path = "/usuario-select")
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @GetMapping(path = "/select")
     public String select(ModelMap modelMap){
         modelMap.addAttribute("usuario",new Usuario());
-        modelMap.addAttribute("usuarios",usuarioDAO.getUsuarios());
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        modelMap.addAttribute("usuarios",usuarios);
         return "admin/interface/usuario";
     }
 
-    @GetMapping("/usuario-edit/{id}")
-    public String edit(Model model, @PathVariable int id){
-        model.addAttribute("usuario",usuarioDAO.getUsuarioById(id));
+    @GetMapping("/edit/{id}")
+    public String edit(Model model, @PathVariable Integer id){
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
+        usuario.ifPresent(value -> model.addAttribute("usuario", value));
         return "admin/interface/editar-usuario";
     }
 
-    @GetMapping("/usuario-delete/{id}")
-    public String delete(@PathVariable int id){
-        usuarioDAO.deleteById(id);
-        return "redirect:/usuario-select";
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id){
+        usuarioRepository.deleteById(id);
+        return "redirect:/usuario/select";
     }
 
-    @PostMapping("/usuario-insert")
+    @PostMapping("/insert")
     public String insert(@ModelAttribute Usuario usuario){
-        usuario.setData_cadastro(new Date());
-        usuarioDAO.insert(usuario);
-        return "redirect:/usuario-select";
+        usuario.setData_cadastro(LocalDate.now());
+        usuarioRepository.save(usuario);
+        return "redirect:/usuario/select";
     }
 
-    @PostMapping("/usuario-update")
+    @PostMapping("/update")
     public  String update(@ModelAttribute Usuario usuario){
-        usuario.setData_cadastro(new Date());
-        usuarioDAO.updateById(usuario);
-        return "redirect:/usuario-select";
+        usuarioRepository.save(usuario);
+        return "redirect:/usuario/select";
+    }
+
+    @PostMapping("/login")
+    public String login(){
+        return "redirect:/";
+    }
+
+    @PostMapping("/signup")
+    public  String signup(){
+        return "pages/profile";
     }
 }

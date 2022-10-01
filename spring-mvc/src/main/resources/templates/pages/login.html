@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <head th:replace="fragments/head::general_head(title='login')"></head>
+  <head th:replace="fragments/head::general_head(title='Login')"></head>
   <link rel="stylesheet" th:href="@{/css/style.css}" />
   <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
 </head>
-<body style="background-color: #f3cba5">
+<body class="bg-color-body">
   <nav th:replace="fragments/header::html_header(pageActive='login')"></nav>
   <main>
     <section>
@@ -13,21 +13,25 @@
         <div class="row">
           <div class="col-5 mx-auto">
             <h3>Fazer Login:</h3>
-            <div class="mt-4">
+            <form th:object="${usuario}"  method="post" action="/login" class="border-slide p-4 rounded-3">
               <label for="staticEmail" class="d-block">E-mail</label>
               <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-label="E-mail" aria-describedby="basic-addon1"
+                <input th:field="${usuario.email}" type="text" class="form-control" aria-label="E-mail" aria-describedby="basic-addon1"
                        id="staticEmail">
               </div>
               <label for="inputPassword" class="d-block mt-3">Senha</label>
               <div class="input-group mb-3">
-                <input type="password" class="form-control" aria-label="Senha" aria-describedby="basic-addon1"
+                <input th:field="${usuario.senha}" type="password" class="form-control" aria-label="Senha" aria-describedby="basic-addon1"
                        id="inputPassword">
               </div>
               <button class="btn-roxo rounded-pill py-2 px-5 mt-3">
                 Entrar
               </button>
-            </div>
+              <div class="mt-4">
+                <span>Não é cadastrado?</span>
+                <a href="/signup">Clique aqui!</a>
+              </div>
+            </form>
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@
             <div class="row mb-4">
                 <div class="col-lg-8 mx-auto">
                     <h3>Cadastro game save</h3>
-                    <form th:object="${gamesave}" action="/gamesave-insert" method="post" class="border-slide p-4 rounded-3">
+                    <form th:object="${gamesave}" action="/gamesave/insert" method="post" class="border-slide p-4 rounded-3">
                         <fieldset>
                             <legend>Dados do Game Save</legend>
                             <div class="mb-2">
@@ -42,30 +42,34 @@
                                 <label for="dia">Dia:</label>
                                 <input th:field="${gamesave.dia}" type="number" id="dia" class="form-control" required>
                             </div>
+                            <div class="mb-2">
+                                <label for="npc">Npc:</label>
+                                <input th:field="${gamesave.npc}" type="number" id="npc" class="form-control" required>
+                            </div>
                             <div class="d-md-flex gap-2 mb-2">
                                 <div>
-                                    <label for="moeda_bronze">Moeda de bronze:</label>
-                                    <input th:field="${gamesave.moeda_bronze}" type="number" id="moeda_bronze" class="form-control" required>
+                                    <label for="moeda_bronze">Moeda de bronze (opcional):</label>
+                                    <input th:field="${gamesave.moeda_bronze}" type="number" id="moeda_bronze" class="form-control">
                                 </div>
                                 <div>
-                                    <label for="moeda_prata">Moeda de prata:</label>
-                                    <input th:field="${gamesave.moeda_prata}" type="number" id="moeda_prata" class="form-control" required>
+                                    <label for="moeda_prata">Moeda de prata (opcional):</label>
+                                    <input th:field="${gamesave.moeda_prata}" type="number" id="moeda_prata" class="form-control">
                                 </div>
                                 <div>
-                                    <label for="moeda_ouro">Moeda de ouro:</label>
-                                    <input th:field="${gamesave.moeda_ouro}" type="number" id="moeda_ouro" class="form-control" required>
+                                    <label for="moeda_ouro">Moeda de ouro (opcional):</label>
+                                    <input th:field="${gamesave.moeda_ouro}" type="number" id="moeda_ouro" class="form-control">
                                 </div>
                             </div>
                             <div class="mb-2">
-                                <label for="ingredientes">Ingredientes:</label>
+                                <label for="ingredientes">Ingredientes (opcional):</label>
                                 <input th:field="${gamesave.ingredientes}" type="text" id="ingredientes" class="form-control">
                             </div>
                             <div class="mb-2">
-                                <label for="itens">Itens:</label>
+                                <label for="itens">Itens (opcional):</label>
                                 <input th:field="${gamesave.itens}" type="text" id="itens" class="form-control">
                             </div>
                             <div class="mb-4">
-                                <label for="potions">Poções:</label>
+                                <label for="potions">Poções (opcional):</label>
                                 <input th:field="${gamesave.potions}" type="text" id="potions" class="form-control">
                             </div>
                             <div>
@@ -82,6 +86,7 @@
                         <th>Id</th>
                         <th>Id do usuário</th>
                         <th>Dia</th>
+                        <th>NPC</th>
                         <th>Moeda de bronze</th>
                         <th>Moeda de prata</th>
                         <th>Moeda de ouro</th>
@@ -96,6 +101,7 @@
                             <td th:text="${gamesave.id}"></td>
                             <td th:text="${gamesave.id_usuario}"></td>
                             <td th:text="${gamesave.dia}"></td>
+                            <td th:text="${gamesave.npc}"></td>
                             <td th:text="${gamesave.moeda_bronze}"></td>
                             <td th:text="${gamesave.moeda_prata}"></td>
                             <td th:text="${gamesave.moeda_ouro}"></td>
@@ -103,8 +109,8 @@
                             <td th:text="${gamesave.itens}"></td>
                             <td th:text="${gamesave.potions}"></td>
                             <td>
-                                <a th:href="@{'/gamesave-edit/'+${gamesave.id}}" class="btn btn-primary">Editar</a>
-                                <a th:href="@{'/gamesave-delete/'+${gamesave.id}}" onclick="return confirm('Deseja Excluir?')" class="btn btn-danger">Excluir</a>
+                                <a th:href="@{'/gamesave/edit/'+${gamesave.id}}" class="btn btn-primary">Editar</a>
+                                <a th:href="@{'/gamesave/delete/'+${gamesave.id}}" onclick="return confirm('Deseja Excluir?')" class="btn btn-danger">Excluir</a>
                             </td>
                         </tr>
                     </tbody>

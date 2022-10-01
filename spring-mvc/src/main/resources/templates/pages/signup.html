@@ -1,39 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <head th:replace="fragments/head::general_head(title='Usuário')"></head>
+  <head th:replace="fragments/head::general_head(title='Sign Up')"></head>
   <link rel="stylesheet" th:href="@{/css/style.css}" />
   <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
-  <style th:inline="css">
-    table{
-      border-top: 2px solid #975a5e;
-    }
-    tr{
-      border-bottom: 2px solid #975a5e;
-    }
-    th,td{
-      padding: 8px;
-    }
-    th:not(:last-of-type),td:not(:last-of-type){
-      border-right: 2px solid #975a5e;
-    }
-  </style>
 </head>
 <body style="background-color: #f3cba5">
-<main class="py-3">
-  <nav class="mb-4">
-    <div class="container">
-      <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/admin">Voltar ao dashboard</a>
-    </div>
-  </nav>
+<nav th:replace="fragments/header::html_header(pageActive='login')"></nav>
+<main>
   <section>
-    <div class="container">
+    <div class="container py-5">
       <div class="row mb-4">
         <div class="col-lg-8 mx-auto">
           <h3>Cadastro usuário</h3>
           <form th:object="${usuario}" action="/usuario/insert" method="post" class="border-slide p-4 rounded-3">
-            <fieldset>
-              <legend>Dados do Usuário</legend>
               <div class="mb-2">
                 <label for="nome">Nome:</label>
                 <input th:field="${usuario.nome}" type="text" id="nome" class="form-control" required>
@@ -45,6 +25,10 @@
               <div class="mb-2">
                 <label for="senha">Senha:</label>
                 <input th:field="${usuario.senha}" type="password" id="senha" class="form-control" required>
+              </div>
+              <div class="mb-2">
+                <label for="confirmasenha">Confirme a Senha:</label>
+                <input type="password" id="confirmasenha" class="form-control" required>
               </div>
               <div class="d-md-flex gap-2 mb-2">
                 <div class="w-100">
@@ -74,49 +58,14 @@
               <div>
                 <button type="submit" class="btn-roxo py-3 px-4 rounded-pill">Cadastrar</button>
               </div>
-            </fieldset>
           </form>
         </div>
-      </div>
-      <div class="overflow-auto">
-        <table class="text-center w-100 mx-auto">
-          <thead>
-          <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Data de cadastro</th>
-            <th>E-mail</th>
-            <th>Senha</th>
-            <th>Apelido</th>
-            <th>Nacionalidade</th>
-            <th>Gênero</th>
-            <th>Data de nascimento</th>
-            <th>Ações</th>
-          </tr>
-          </thead>
-          <tbody th:each="usuario : ${usuarios}">
-          <tr>
-            <td th:text="${usuario.id}"></td>
-            <td th:text="${usuario.nome}"></td>
-            <td th:text="${usuario.data_cadastro}"></td>
-            <td th:text="${usuario.email}"></td>
-            <td th:text="${usuario.senha}"></td>
-            <td th:text="${usuario.apelido}"></td>
-            <td th:text="${usuario.nacionalidade}"></td>
-            <td th:text="${usuario.genero}"></td>
-            <td th:text="${usuario.data_nascimento}"></td>
-            <td>
-              <a th:href="@{'/usuario/edit/'+${usuario.id}}" class="btn btn-primary">Editar</a>
-              <a th:href="@{'/usuario/delete/'+${usuario.id}}" onclick="return confirm('Deseja Excluir?')" class="btn btn-danger">Excluir</a>
-            </td>
-          </tr>
-          </tbody>
-        </table>
       </div>
     </div>
     <!--container-->
   </section>
 </main>
+<footer th:replace="fragments/footer::html_footer"></footer>
 <!-- Bootstrap JavaScript Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
