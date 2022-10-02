@@ -2,11 +2,11 @@
 <html lang="pt-br">
 <head>
   <div th:replace="fragments/head::general_head(title='Alquimia das palavras')"></div>
-  <link rel="stylesheet" th:href="@{/css/style.css}" />
-  <link rel="shortcut icon" th:href="@{/images/favicon.ico}" type="image/x-icon" />
+  <link rel="stylesheet" th:href="@{/css/site/style.css}" />
+  <link rel="shortcut icon" th:href="@{/images/site/favicon.ico}" type="image/x-icon" />
   <style th:inline="css">
     .bg-image-home {
-      background-image: url("/images/backgrounds/bg-home.svg");
+      background-image: url("/images/site/backgrounds/bg-home.svg");
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
@@ -31,14 +31,14 @@
       <!--SINOPSE DO JOGO-->
       <div class="row pb-3">
         <div class="col-lg-8 col-xl-6 text-center mx-auto p-0">
-          <img width="200px" th:src="@{/images/logos/secondary-logo.png}" alt="secondary-logo" />
+          <img width="200px" th:src="@{/images/site/logos/secondary-logo.png}" alt="secondary-logo" />
           <p class="fs-5 w-75 mx-auto">
             De uma hora para outra as pessoas começaram a esquecer
             determinadas palavras. No entanto, não há necessidade de pânico,
             pois o Estabelecimento Alquimia das Palavras está pronta para fazer os seus clientes
             recuperarem suas palavras perdidas!
           </p>
-          <img width="100%" style="opacity: 0.5" th:src="@{/images/forms/linha-redondaX.svg}" />
+          <img width="100%" style="opacity: 0.5" th:src="@{/images/site/forms/linha-redondaX.svg}" />
         </div>
       </div>
 
@@ -62,7 +62,7 @@
       <!--PLACA DE DOAÇÃO-->
       <div class="placa-doar mx-auto py-3 text-center rounded-3 shadow">
         <div class="d-lg-flex align-items-center justify-content-center">
-          <img width="100px" th:src="@{/images/icons/icon-alqui.svg}" alt="Ícone Alquimia das palavras" />
+          <img width="100px" th:src="@{/images/site/icons/icon-alqui.svg}" alt="Ícone Alquimia das palavras" />
           <p class="text-light mt-3 ms-2 fs-5">Apoie o projeto!</p>
         </div>
         <p class="text-light w-75 mx-auto">

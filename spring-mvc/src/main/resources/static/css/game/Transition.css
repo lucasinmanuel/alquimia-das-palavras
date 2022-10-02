@@ -1,0 +1,16 @@
+#modal-transition {
+    width: 100%;
+    background-color: #f3cba5;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 2s;
+    z-index: 200;
+}
+
+#modal-transition p {
+    font-size: 3rem;
+    text-align: center;
+}

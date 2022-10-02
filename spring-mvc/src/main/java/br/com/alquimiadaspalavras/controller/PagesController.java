@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PagesController {
     @GetMapping(path = {"","/"})
     public String home(){
-        return "/pages/home";
+        return "pages/home";
     }
     @GetMapping(path = "/mechanics")
     public String mechanics(){
-        return "/pages/mechanics";
+        return "pages/mechanics";
     }
     @GetMapping(path = "/news")
     public String news(){
-        return "/pages/news";
+        return "pages/news";
     }
     @GetMapping(path = "/about")
     public String about(){
-        return "/pages/about";
+        return "pages/about";
     }
     @GetMapping(path = "/suggestion")
     public String suggestion(){
@@ -30,15 +30,19 @@ public class PagesController {
     @GetMapping(path = "/login")
     public String login(Model model){
         model.addAttribute("usuario",new Usuario());
-        return "/pages/login";
+        return "pages/login";
     }
     @GetMapping(path = "/signup")
     public String signup(Model model){
         model.addAttribute("usuario",new Usuario());
-        return "/pages/signup";
+        return "pages/signup";
     }
     @GetMapping(path = "/admin")
     public String dashboard(){
         return "admin/dashboard";
+    }
+    @GetMapping(path = "/game")
+    public String game(){
+        return "game/index";
     }
 }
