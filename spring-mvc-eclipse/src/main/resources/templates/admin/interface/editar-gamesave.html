@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head th:replace="fragments/head::general_head(title='Editar - Game Save')"></head>
+  <link rel="stylesheet" th:href="@{/css/site/style.css}" />
+  <link rel="shortcut icon" th:href="@{/images/site/favicon.ico}" type="image/x-icon" />
+</head>
+<body class="bg-color-body">
+<main class="py-3">
+  <nav class="mb-4">
+    <div class="container">
+      <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/gamesave/select">Voltar ao game save</a>
+    </div>
+  </nav>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h3 th:text="@{'Editar game save '+${gamesave.id}}"></h3>
+          <form th:object="${gamesave}" action="/gamesave/update" method="post" class="border-slide p-4 rounded-3">
+            <input type="hidden" th:field="${gamesave.id}" th:value="${gamesave.id}">
+            <div class="mb-2">
+              <label for="id_usuario">Id do usuário:</label>
+              <input th:field="${gamesave.id_usuario}" th:value="${gamesave.id_usuario}" type="number" id="id_usuario" class="form-control" required>
+            </div>
+            <div class="mb-2">
+              <label for="dia">Dia:</label>
+              <input th:field="${gamesave.dia}" th:value="${gamesave.dia}" type="number" id="dia" class="form-control" required>
+            </div>
+            <div class="mb-2">
+              <label for="npc">Npc:</label>
+              <input th:field="${gamesave.npc}" type="number" id="npc" class="form-control" required>
+            </div>
+            <div class="d-md-flex gap-2 mb-2">
+              <div class="w-100">
+                <label for="moeda_bronze">Moeda de bronze (opcional):</label>
+                <input th:field="${gamesave.moeda_bronze}" th:value="${gamesave.moeda_bronze}" type="number" id="moeda_bronze" class="form-control">
+              </div>
+              <div class="w-100">
+                <label for="moeda_prata">Moeda de prata (opcional):</label>
+                <input th:field="${gamesave.moeda_prata}" th:value="${gamesave.moeda_prata}" type="number" id="moeda_prata" class="form-control">
+              </div>
+              <div class="w-100">
+                <label for="moeda_ouro">Moeda de ouro (opcional):</label>
+                <input th:field="${gamesave.moeda_ouro}" th:value="${gamesave.moeda_ouro}" type="number" id="moeda_ouro" class="form-control">
+              </div>
+            </div>
+            <div class="mb-2">
+              <label for="ingredientes">Ingredientes (opcional):</label>
+              <input th:field="${gamesave.ingredientes}" th:value="${gamesave.ingredientes}" type="text" id="ingredientes" class="form-control">
+            </div>
+            <div class="mb-2">
+              <label for="itens">Itens (opcional):</label>
+              <input th:field="${gamesave.itens}" th:value="${gamesave.itens}" type="text" id="itens" class="form-control">
+            </div>
+            <div class="mb-4">
+              <label for="potions">Poções (opcional):</label>
+              <input th:field="${gamesave.potions}" th:value="${gamesave.potions}" type="text" id="potions" class="form-control">
+            </div>
+            <button type="submit" class="btn-roxo py-3 px-4 rounded-pill">Atualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

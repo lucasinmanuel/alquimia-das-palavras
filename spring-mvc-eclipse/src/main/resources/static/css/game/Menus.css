@@ -1,0 +1,66 @@
+#menus {
+  width: 30vw;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #453953;
+  border-left: 0.5rem solid #975a5e;
+}
+
+#btns-modals {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem;
+}
+
+.btn-menus {
+  background-color: #975a5e;
+  border: 0.18rem solid #25161b;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-menus:hover {
+  background-color: #f3cba5;
+}
+
+#area-crafting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #25161b;
+}
+
+#area-crafting h1 {
+  width: 100%;
+  font-size: 2rem;
+  padding: 0.3rem 0;
+  background-color: #975a5e;
+}
+
+#caldeirao {
+  width: 18.5rem;
+  margin-top: 1rem;
+}
+
+#barra-progresso {
+  width: 80%;
+  height: 1.3rem;
+  min-height: 20px;
+  border: 0.18rem solid #975a5e;
+  margin: 0 auto;
+}
+
+#barra-progresso div {
+  width: 0;
+  height: 100%;
+  background-color: #453953;
+}

@@ -1,0 +1,158 @@
+html {
+    font-size: 100%;
+}
+
+@media screen and (height > 760px) {
+    #bg-loja {
+        height: 83%;
+    }
+
+    #balcao {
+        top: 83%;
+    }
+
+    #caixa-dialogo {
+        top: 39%;
+    }
+}
+
+@media screen and (height < 670px) {
+    #cenario {
+        overflow-y: scroll;
+    }
+}
+
+/*WIDTH*/
+@media screen and (max-width:1450px) and (height > 670px) {
+    html {
+        font-size: 98%;
+    }
+
+    #caixa-dialogo {
+        top: 29%;
+    }
+}
+
+@media screen and (max-width:1400px) and (height > 670px) {
+    html {
+        font-size: 95%;
+    }
+
+    #caixa-dialogo {
+        top: 30%;
+    }
+}
+
+@media screen and (max-width:1380px) and (height > 670px) {
+    html {
+        font-size: 92%;
+    }
+
+    #npc {
+        bottom: -125px;
+    }
+
+    #caixa-dialogo {
+        top: 32%;
+    }
+}
+
+@media screen and (max-width:1300px) and (height > 670px) {
+    html {
+        font-size: 88%;
+    }
+
+    #caixa-dialogo {
+        top: 35%;
+    }
+}
+
+@media screen and (max-width:1280px) and (height > 670px) {
+    html {
+        font-size: 86%;
+    }
+
+    #npc {
+        bottom: -110px;
+    }
+}
+
+@media screen and (max-width:1200px) and (height > 670px) {
+    html {
+        font-size: 84%;
+    }
+
+    #npc {
+        bottom: -100px;
+    }
+
+    #caixa-dialogo {
+        top: 35%;
+    }
+}
+
+@media screen and (max-width:1180px) and (height > 670px) {
+    html {
+        font-size: 82%;
+    }
+
+    #caixa-dialogo {
+        width: 28rem;
+        top: 37%;
+    }
+}
+
+/*HEIGHT*/
+@media screen and (max-height:670px) {
+    html {
+        font-size: 92%;
+    }
+}
+
+@media screen and (max-height:590px) {
+    html {
+        font-size: 88%;
+    }
+}
+
+@media screen and (max-height:570px) {
+    html {
+        font-size: 84%;
+    }
+}
+
+@media screen and (max-height:540px) {
+    html {
+        font-size: 82%;
+    }
+}
+
+@media screen and (max-height:520px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-height:500px) {
+    html {
+        font-size: 78%;
+    }
+}
+
+@media screen and (max-height:480px) {
+    html {
+        font-size: 76%;
+    }
+}
+
+@media screen and (max-height:470px) {
+    html {
+        font-size: 74%;
+    }
+}
+
+@media screen and (max-height:460px) {
+    html {
+        font-size: 72%;
+    }
+}
