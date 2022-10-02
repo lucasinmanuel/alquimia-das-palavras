@@ -15,7 +15,7 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
+        <div class="col-xl-9 mx-auto">
           <h3 th:text="@{'Editar game save '+${gamesave.id}}"></h3>
           <form th:object="${gamesave}" action="/gamesave/update" method="post" class="border-slide p-4 rounded-3">
             <input type="hidden" th:field="${gamesave.id}" th:value="${gamesave.id}">
@@ -32,15 +32,15 @@
               <input th:field="${gamesave.npc}" type="number" id="npc" class="form-control" required>
             </div>
             <div class="d-md-flex gap-2 mb-2">
-              <div>
+              <div class="w-100">
                 <label for="moeda_bronze">Moeda de bronze (opcional):</label>
                 <input th:field="${gamesave.moeda_bronze}" th:value="${gamesave.moeda_bronze}" type="number" id="moeda_bronze" class="form-control">
               </div>
-              <div>
+              <div class="w-100">
                 <label for="moeda_prata">Moeda de prata (opcional):</label>
                 <input th:field="${gamesave.moeda_prata}" th:value="${gamesave.moeda_prata}" type="number" id="moeda_prata" class="form-control">
               </div>
-              <div>
+              <div class="w-100">
                 <label for="moeda_ouro">Moeda de ouro (opcional):</label>
                 <input th:field="${gamesave.moeda_ouro}" th:value="${gamesave.moeda_ouro}" type="number" id="moeda_ouro" class="form-control">
               </div>

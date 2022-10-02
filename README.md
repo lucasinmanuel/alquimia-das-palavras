@@ -2,7 +2,6 @@
 <p>Este projeto foi criado para o programa Recode Pro 2022. Um projeto colaborativo criado para ajudar pessoas com baixa proficiência em leitura, com foco no público com dislexia.</p>
 
 <img src="./img-readme.png" />
-<a href="https://projeto-final-recode-2022.vercel.app/">Link para o site</a>
 
 <h2>Colaboradores</h2>
 <table border>
@@ -39,12 +38,6 @@
                 </a>
                 <h3>Bruno Araujo</h3>
             </td>
-            <td align="center">
-                <a href="https://github.com/talesdeoliveira">
-                    <img src="https://github.com/talesdeoliveira.png" />
-                </a>
-                <h3>Tales de Oliveira</h3>
-            </td>
         </tr>
     </tbody>
 </table>
@@ -52,7 +45,7 @@
 <h2>Escopo do Projeto</h2>
 <p>
     <b>Squad nº 24</b><br />
-    <b>Nome do líder</b>: Tales De Oliveira Gomes<br />
+    <b>Nome do líder</b>: Lucas Emanuel Santana Dos Santos<br />
     <b>Nome do Vice-líder</b>: Larissa Lavinia Alves Dos Santos Ferreira<br />
     <b>Demais integrantes</b>:<br />
 </p>
@@ -61,7 +54,6 @@
     <li>Bruno Macedo De Araujo</li> 
     <li>Fabricio José Dos Santos</li>
     <li>Sarah Dos Santos Salles</li>
-    <li>Lucas Emanuel Santana Dos Santos</li>
 </ol>
 
 <p>

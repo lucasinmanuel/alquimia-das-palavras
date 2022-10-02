@@ -15,7 +15,7 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-xl-9 mx-auto">
                     <h3 th:text="@{'Editar usuário '+${usuario.id}}"></h3>
                     <form th:object="${usuario}" action="/usuario/update" method="post" class="border-slide p-4 rounded-3">
                         <input type="hidden" th:field="${usuario.id}" th:value="${usuario.id}">

@@ -23,6 +23,7 @@ create table if not exists game_save(
 id int not null primary key auto_increment,
 id_usuario int not null,
 dia int not null,
+npc int not null,
 moeda_bronze int not null,
 moeda_prata int not null,
 moeda_ouro int not null,

@@ -23,6 +23,10 @@ public class PagesController {
     public String about(){
         return "/pages/about";
     }
+    @GetMapping(path = "/suggestion")
+    public String suggestion(){
+        return "pages/suggestion";
+    }
     @GetMapping(path = "/login")
     public String login(Model model){
         model.addAttribute("usuario",new Usuario());
