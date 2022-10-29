@@ -20,47 +20,58 @@ export default class Save {
   //   }
   //   return save;
   // }
-  // static setSave() {
-  //   const day = sessionStorage.getItem("day");
-  //   const whichNpc = sessionStorage.getItem("whichNpc");
-  //   const copperCoin = sessionStorage.getItem("moeda_bronze");
-  //   const silverCoin = sessionStorage.getItem("moeda_prata");
-  //   const goldCoin = sessionStorage.getItem("moeda_ouro");
-  //   const store = document.querySelectorAll("#armazem-itens img");
-  //   const potionName = document.querySelectorAll(".receita-title b");
-  //   const ingredientes = document.querySelectorAll(".ingredientes img");
-  //   const prepTime = document.querySelectorAll(".prepTime span");
-  //   let storeItens = [];
-  //   store.forEach((value, i) => {
-  //     storeItens[i] = {
-  //       id: value.id,
-  //       title: value.title,
-  //       alt: value.alt,
-  //       src: value.src,
-  //     };
-  //   });
-  //   let recipes = [];
-  //   potionName.forEach((value, i) => {
-  //     recipes[i] = {
-  //       name: value.innerHTML,
-  //       ingredientes: {
-  //         id: ingredientes[i].id,
-  //         title: ingredientes[i].title,
-  //         alt: ingredientes[i].alt,
-  //         src: ingredientes[i].src,
-  //       },
-  //       tempoPreparo: prepTime[i].innerHTML,
-  //     };
-  //   });
-  //   localStorage.setItem(
-  //     "save",
-  //     `{
-  //       "day":${day},
-  //       "whichNpc": ${whichNpc},
-  //       "coins":{"copper": ${copperCoin}, "silver": ${silverCoin}, "gold": ${goldCoin}},
-  //       "store": ${JSON.stringify([...storeItens])},
-  //       "recipes": ${JSON.stringify([...recipes])}
-  //     }`
-  //   );
-  // }
+  static setSave() {
+    const day = sessionStorage.getItem("dia");
+    const whichNpc = sessionStorage.getItem("npc");
+    const copperCoin = sessionStorage.getItem("moeda_bronze");
+    const silverCoin = sessionStorage.getItem("moeda_prata");
+    const goldCoin = sessionStorage.getItem("moeda_ouro");
+    const store = document.querySelectorAll("#armazem-itens img");
+    const ingredientes = document.querySelectorAll(".ingredientes img");
+    const prepTime = document.querySelectorAll(".prepTime span");
+    let storeItens = [];
+    store.forEach((value, i) => {
+      storeItens[i] = {
+        id: value.id,
+        title: value.title,
+        alt: value.alt,
+        src: value.src,
+      };
+    });
+    let recipes = [];
+    ingredientes.forEach((value, i) => {
+      recipes[i] = {
+        name: value.innerHTML.split("-")[0].replace(" ", ""),
+        valor: value.innerHTML.split("-")[1].replace(" ", ""),
+        ingredientes: [
+          {
+            id: ingredientes[i].id,
+            title: ingredientes[i].title,
+            alt: ingredientes[i].alt,
+            src: ingredientes[i].src,
+          },
+        ],
+        tempoPreparo: prepTime[i].innerHTML,
+      };
+    });
+    console.log(storeItens);
+    fetch("http://localhost:8080/pages/game/save", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: Number(sessionStorage.getItem("id")),
+        day: day,
+        whichNpc: whichNpc,
+        copper_coin: copperCoin,
+        silver_coin: silverCoin,
+        gold_coin: goldCoin,
+        store: [...storeItens],
+        recipes: [...recipes],
+      }),
+    })
+      .then((resonse) => resonse.json())
+      .then((json) => {
+        console.log(json);
+      });
+  }
 }

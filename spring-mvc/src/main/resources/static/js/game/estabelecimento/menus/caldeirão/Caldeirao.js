@@ -14,7 +14,7 @@ export default class Caldeirao {
       case "alecrim":
         this.caldeirao.setAttribute(
           "src",
-          "images/game/sprite-caldeirão/caldeirão-alecrim.png"
+          "../../../images/game/sprite-caldeirão/caldeirão-alecrim.png"
         );
         break;
       case "alecrim,alecrim":
@@ -24,7 +24,7 @@ export default class Caldeirao {
       case "jade":
         this.caldeirao.setAttribute(
           "src",
-          "images/game/sprite-caldeirão/caldeirão-jade.png"
+          "../../../images/game/sprite-caldeirão/caldeirão-jade.png"
         );
         break;
       case "jade,jade":
@@ -35,7 +35,7 @@ export default class Caldeirao {
         this.insideCaldeirao = [];
         this.caldeirao.setAttribute(
           "src",
-          "images/game/sprite-caldeirão/caldeirão.png"
+          "../../../images/game/sprite-caldeirão/caldeirão.png"
         );
         break;
     }
@@ -44,7 +44,7 @@ export default class Caldeirao {
   potionCorrer() {
     this.caldeirao.setAttribute(
       "src",
-      "images/game/sprite-caldeirão/caldeirão-alecrim-alecrim.png"
+      "../../../images/game/sprite-caldeirão/caldeirão-alecrim-alecrim.png"
     );
 
     this.barraProgress.style.transition = "3s";
@@ -52,7 +52,7 @@ export default class Caldeirao {
     setTimeout(() => {
       this.caldeirao.setAttribute(
         "src",
-        "images/game/sprite-caldeirão/caldeirão.png"
+        "../../../images/game/sprite-caldeirão/caldeirão.png"
       );
       this.barraProgress.style.transition = "none";
       this.barraProgress.style.width = "0%";
@@ -63,7 +63,7 @@ export default class Caldeirao {
   potionComprar() {
     this.caldeirao.setAttribute(
       "src",
-      "images/game/sprite-caldeirão/caldeirão-jade-jade.png"
+      "../../../images/game/sprite-caldeirão/caldeirão-jade-jade.png"
     );
 
     this.barraProgress.style.transition = "5s";
@@ -71,7 +71,7 @@ export default class Caldeirao {
     setTimeout(() => {
       this.caldeirao.setAttribute(
         "src",
-        "images/game/sprite-caldeirão/caldeirão.png"
+        "../../../images/game/sprite-caldeirão/caldeirão.png"
       );
       this.barraProgress.style.transition = "none";
       this.barraProgress.style.width = "0%";

@@ -23,7 +23,7 @@
 <main class="py-3">
     <nav class="mb-4">
         <div class="container">
-            <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/admin">Voltar ao dashboard</a>
+            <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/admin/dashboard">Voltar ao dashboard</a>
         </div>
     </nav>
     <section>
@@ -31,12 +31,12 @@
             <div class="row mb-4">
                 <div class="col-xl-9 mx-auto">
                     <h3>Cadastro game save</h3>
-                    <form th:object="${gamesave}" action="/gamesave/insert" method="post" class="border-slide p-4 rounded-3">
+                    <form th:object="${gamesave}" action="/admin/gamesave/insert" method="post" class="border-slide p-4 rounded-3">
                         <fieldset>
                             <legend>Dados do Game Save</legend>
                             <div class="mb-2">
                                 <label for="id_usuario">Id do usuário:</label>
-                                <input th:field="${gamesave.id_usuario}" type="number" id="id_usuario" class="form-control" required>
+                                <input name="id_usuario" type="number" id="id_usuario" class="form-control" required>
                             </div>
                             <div class="mb-2">
                                 <label for="dia">Dia:</label>
@@ -84,7 +84,7 @@
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Id do usuário</th>
+                        <th>Id/nome do usuário</th>
                         <th>Dia</th>
                         <th>NPC</th>
                         <th>Moeda de bronze</th>
@@ -99,7 +99,7 @@
                     <tbody th:each="gamesave : ${gamesaves}">
                         <tr>
                             <td th:text="${gamesave.id}"></td>
-                            <td th:text="${gamesave.id_usuario}"></td>
+                            <td th:text="${gamesave.usuario.id+'/'+gamesave.usuario.nome}"></td>
                             <td th:text="${gamesave.dia}"></td>
                             <td th:text="${gamesave.npc}"></td>
                             <td th:text="${gamesave.moeda_bronze}"></td>
@@ -109,8 +109,8 @@
                             <td th:text="${gamesave.itens}"></td>
                             <td th:text="${gamesave.potions}"></td>
                             <td>
-                                <a th:href="@{'/gamesave/edit/'+${gamesave.id}}" class="btn btn-primary">Editar</a>
-                                <a th:href="@{'/gamesave/delete/'+${gamesave.id}}" onclick="return confirm('Deseja Excluir?')" class="btn btn-danger">Excluir</a>
+                                <a th:href="@{'/admin/gamesave/edit/'+${gamesave.id}}" class="btn btn-primary">Editar</a>
+                                <a th:href="@{'/admin/gamesave/delete/'+${gamesave.id}}" onclick="return confirm('Deseja Excluir?')" class="btn btn-danger">Excluir</a>
                             </td>
                         </tr>
                     </tbody>

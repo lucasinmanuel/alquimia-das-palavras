@@ -23,7 +23,7 @@
 <main class="py-3">
   <nav class="mb-4">
     <div class="container">
-      <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/admin">Voltar ao dashboard</a>
+      <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/admin/dashboard">Voltar ao dashboard</a>
     </div>
   </nav>
   <section>
@@ -31,12 +31,20 @@
       <div class="row mb-4">
         <div class="col-xl-9 mx-auto">
           <h3>Cadastro usuário</h3>
-          <form th:object="${usuario}" action="/usuario/insert" method="post" class="border-slide p-4 rounded-3">
+          <form th:object="${usuario}" action="/admin/usuario/insert" method="post" class="border-slide p-4 rounded-3">
             <fieldset>
               <legend>Dados do Usuário</legend>
               <div class="mb-2">
                 <label for="nome">Nome:</label>
                 <input th:field="${usuario.nome}" type="text" id="nome" class="form-control" required>
+              </div>
+              <div class="mb-2">
+                <label for="cargo">Cargo:</label>
+                <select name="cargo" class="form-select" id="cargo" required>
+                  <option selected disabled value="">Escolha...</option>
+                  <option value="1">Administrador</option>
+                  <option value="2">Usuário</option>
+                </select>
               </div>
               <div class="mb-2">
                 <label for="email">E-mail:</label>
@@ -57,7 +65,7 @@
                 </div>
                 <div class="w-100">
                   <label for="genero" class="form-label mb-0">Gênero</label>
-                  <select th:field="${usuario.genero}" class="form-select" id="genero" required>
+                  <select name="genero" class="form-select" id="genero" required>
                     <option selected disabled value="">Escolha...</option>
                     <option value="masculino">Masculino</option>
                     <option value="feminino">Feminino</option>
@@ -83,6 +91,7 @@
           <thead>
           <tr>
             <th>Id</th>
+            <th>Id/nome do cargo</th>
             <th>Nome</th>
             <th>Data de cadastro</th>
             <th>E-mail</th>
@@ -97,6 +106,7 @@
           <tbody th:each="usuario : ${usuarios}">
           <tr>
             <td th:text="${usuario.id}"></td>
+            <td th:text="${usuario.cargo.id+'/'+usuario.cargo.nome}"></td>
             <td th:text="${usuario.nome}"></td>
             <td th:text="${usuario.data_cadastro}"></td>
             <td th:text="${usuario.email}"></td>
@@ -106,8 +116,8 @@
             <td th:text="${usuario.genero}"></td>
             <td th:text="${usuario.data_nascimento}"></td>
             <td>
-              <a th:href="@{'/usuario/edit/'+${usuario.id}}" class="btn btn-primary">Editar</a>
-              <a th:href="@{'/usuario/delete/'+${usuario.id}}" onclick="return confirm('Deseja Excluir?')" class="btn btn-danger">Excluir</a>
+              <a th:href="@{'/admin/usuario/edit/'+${usuario.id}}" class="btn btn-primary">Editar</a>
+              <a th:href="@{'/admin/usuario/delete/'+${usuario.id}}" onclick="return confirm('Deseja Excluir?')" class="btn btn-danger">Excluir</a>
             </td>
           </tr>
           </tbody>

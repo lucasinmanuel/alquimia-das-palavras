@@ -29,6 +29,8 @@ export default class EstabelecimentoAlquimico {
                 <!--Elementos adicionandos na Classe Grimorio.load()-->
             </div>
             <div id="modal-transition"></div>
+            <audio id="background-music">
+            </audio>
         `;
 
     Cenario.load();

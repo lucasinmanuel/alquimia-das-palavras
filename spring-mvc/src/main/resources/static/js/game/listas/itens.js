@@ -4,7 +4,7 @@ export default function itens() {
       id: "revelador-simples",
       title: "Revelador Simples",
       alt: "Revelador Simples",
-      src: "images/game/itens/revelador-simples.png",
+      src: "../../../images/game/itens/revelador-simples.png",
     },
   };
 

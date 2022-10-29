@@ -4,10 +4,13 @@ export default class Npc {
   load(npc) {
     let areaFases = document.getElementById("area-fases");
     areaFases.innerHTML = `
-        <img id="npc" src="images/game/npcs/${npc}" draggable="false" />
+        <img id="npc" src="../../../images/game/npcs/${npc}" draggable="false" />
         <div id="caixa-dialogo">
             <p></p>
             <div id="caixa-escolhas"></div>
+            <!--<audio id="audio">
+              <source src="../../../audio/audio.ogg" type="audio/ogg">
+            </audio>-->
         </div>
     `;
   }
@@ -30,6 +33,7 @@ export default class Npc {
 
     let caixaDialogo = document.querySelector("#caixa-dialogo p");
     let caixaEscolhas = document.getElementById("caixa-escolhas");
+    // let npcAudio = document.getElementById("audio");
 
     let indexLetra = 0;
     let indexDialogo = 0;
@@ -56,6 +60,7 @@ export default class Npc {
       if (dialogoNPC != undefined) {
         //ADICIONAR AS LETRAS NA CAIXA DE DIALOGO
         caixaDialogo.innerHTML += dialogoNPC.charAt(iLetra);
+        // npcAudio.play();
 
         if (iLetra < dialogoNPC.length) {
           indexLetra++;
@@ -103,6 +108,7 @@ export default class Npc {
         //DEFINE A QUANTIDADE DE MOEDAS GANHAS
         let moeda = document.querySelector(`#qtd-moeda-${tipoMoeda} span`);
         moeda.innerHTML = Number(moeda.innerHTML) + qtdMoeda;
+        sessionStorage.setItem(`moeda_${tipoMoeda}`, Number(moeda.innerHTML));
       }
     }
 

@@ -10,13 +10,13 @@ export default class Menus {
             </div>
             <div id="area-crafting">
                 <h1>Área de crafting</h1>
-                <img draggable="false" id="caldeirao" src="images/game/sprite-caldeirão/caldeirão.png" />
+                <img draggable="false" id="caldeirao" src="../../../images/game/sprite-caldeirão/caldeirão.png" />
                 <div id="barra-progresso">
                 <div></div>
                 </div>
             </div>
             <div id="grimoire-wrapper">
-              <img draggable="false" id="img-grimorio" src="images/game/close-grimoire.png" />
+              <img draggable="false" id="img-grimorio" src="../../../images/game/close-grimoire.png" />
             <div>
         </div>  
         `;

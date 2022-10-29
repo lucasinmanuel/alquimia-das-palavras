@@ -1,31 +1,40 @@
 package br.com.alquimiadaspalavras.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "gamesave")
+@Table
 public class GameSave {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "id_usuario",nullable = false)
-    private Integer id_usuario;
-    @Column(name = "dia",nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false,name = "id_usuario")
+    private Usuario usuario;
+    @Column(nullable = false)
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate data_save;
+    @Column(nullable = false)
+    private Integer save_slot;
+    @Column(nullable = false)
     private Integer dia;
-    @Column(name = "npc",nullable = false)
+    @Column(nullable = false)
     private Integer npc;
-    @Column(name = "moeda_bronze")
+    @Column(nullable = false)
     private Integer moeda_bronze;
-    @Column(name = "ingredientes")
-    private String ingredientes;
-    @Column(name = "moeda_prata")
+    @Column(nullable = false)
     private Integer moeda_prata;
-    @Column(name = "moeda_ouro")
+    @Column(nullable = false)
     private Integer moeda_ouro;
-    @Column(name = "itens")
-    private String itens;
-    @Column(name = "potions")
-    private String potions;
+    @Column
+    @Lob
+    private String armazem;
+    @Column
+    @Lob
+    private String receita;
 
     public Integer getId() {
         return id;
@@ -35,12 +44,28 @@ public class GameSave {
         this.id = id;
     }
 
-    public Integer getId_usuario() {
-        return id_usuario;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setId_usuario(Integer id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public LocalDate getData_save() {
+        return data_save;
+    }
+
+    public void setData_save(LocalDate data_save) {
+        this.data_save = data_save;
+    }
+
+    public Integer getSave_slot() {
+        return save_slot;
+    }
+
+    public void setSave_slot(Integer save_slot) {
+        this.save_slot = save_slot;
     }
 
     public Integer getDia() {
@@ -67,14 +92,6 @@ public class GameSave {
         this.moeda_bronze = moeda_bronze;
     }
 
-    public String getIngredientes() {
-        return ingredientes;
-    }
-
-    public void setIngredientes(String ingredientes) {
-        this.ingredientes = ingredientes;
-    }
-
     public Integer getMoeda_prata() {
         return moeda_prata;
     }
@@ -91,19 +108,19 @@ public class GameSave {
         this.moeda_ouro = moeda_ouro;
     }
 
-    public String getItens() {
-        return itens;
+    public String getArmazem() {
+        return armazem;
     }
 
-    public void setItens(String itens) {
-        this.itens = itens;
+    public void setArmazem(String armazem) {
+        this.armazem = armazem;
     }
 
-    public String getPotions() {
-        return potions;
+    public String getReceita() {
+        return receita;
     }
 
-    public void setPotions(String potions) {
-        this.potions = potions;
+    public void setReceita(String receita) {
+        this.receita = receita;
     }
 }

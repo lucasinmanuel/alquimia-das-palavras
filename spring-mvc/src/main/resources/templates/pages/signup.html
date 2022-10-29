@@ -13,7 +13,7 @@
       <div class="row mb-4">
         <div class="col-xl-8 mx-auto">
           <h3>Cadastro usuário</h3>
-          <form th:object="${usuario}" action="/usuario/insert" method="post" class="border-slide p-4 rounded-3">
+          <form th:object="${usuario}" action="/pages/signup" method="post" class="border-slide p-4 rounded-3">
               <div class="mb-2">
                 <label for="nome">Nome:</label>
                 <input th:field="${usuario.nome}" type="text" id="nome" class="form-control" required>

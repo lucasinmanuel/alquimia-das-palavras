@@ -13,15 +13,15 @@
         <div class="row">
           <div class="col-lg-8 col-xl-6 mx-auto">
             <h3>Fazer Login:</h3>
-            <form th:object="${usuario}"  method="post" action="/login" class="border-slide p-4 rounded-3">
+            <form method="post" th:action="@{/login}" class="border-slide p-4 rounded-3">
               <label for="staticEmail" class="d-block">E-mail</label>
               <div class="input-group mb-3">
-                <input th:field="${usuario.email}" type="text" class="form-control" aria-label="E-mail" aria-describedby="basic-addon1"
+                <input name="username" type="text" class="form-control" aria-label="E-mail" aria-describedby="basic-addon1"
                        id="staticEmail">
               </div>
               <label for="inputPassword" class="d-block mt-3">Senha</label>
               <div class="input-group mb-3">
-                <input th:field="${usuario.senha}" type="password" class="form-control" aria-label="Senha" aria-describedby="basic-addon1"
+                <input name="password" type="password" class="form-control" aria-label="Senha" aria-describedby="basic-addon1"
                        id="inputPassword">
               </div>
               <button class="btn-roxo rounded-pill py-2 px-5 mt-3">
@@ -29,7 +29,7 @@
               </button>
               <div class="mt-4">
                 <span>Não é cadastrado?</span>
-                <a href="/signup">Clique aqui!</a>
+                <a href="/pages/signup">Clique aqui!</a>
               </div>
             </form>
           </div>

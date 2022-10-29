@@ -2,13 +2,14 @@ import D1Npc1 from "../dia-1/npc-1/npc.js";
 import D1Npc2 from "../dia-1/npc-2/npc.js";
 import FasesService from "./FasesService.js";
 import Transition from "../../estabelecimento/modal-transition/Transition.js";
+import npc from "../dia-1/npc-1/npc.js";
 
 export default class InitFases {
-  static selecionarDia() {
-    switch (1) {
+  static selecionarDia(dia, npc) {
+    switch (dia) {
       case 1:
         let npcs = [D1Npc1(), D1Npc2(), undefined];
-        this.advanceDay(1, 0, npcs);
+        this.advanceDay(dia, npc, npcs);
         break;
       case 2:
         break;
@@ -25,8 +26,9 @@ export default class InitFases {
         html_day.innerText = updatedDay;
         document
           .querySelector("#status img")
-          .setAttribute("src", "images/game/placa-fechado.png");
+          .setAttribute("src", "../../../images/game/placa-fechado.png");
         Transition.start(updatedDay);
+        sessionStorage.setItem("dia", updatedDay);
         i = 0;
       } else {
         if (fasesService.checkNpc()) {
@@ -37,6 +39,7 @@ export default class InitFases {
             npcs[i].info.qtdMoeda,
             npcs[i].falas
           );
+          sessionStorage.setItem("npc", i);
           i++;
         }
         setTimeout(() => {

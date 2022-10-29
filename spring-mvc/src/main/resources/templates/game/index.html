@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <title>Estabelecimento Alquimico</title>
@@ -15,13 +15,24 @@
   <link rel="stylesheet" th:href="@{/css/game/Grimorio.css}" />
   <link rel="stylesheet" th:href="@{/css/game/Transition.css}" />
   <link rel="stylesheet" th:href="@{/css/game/media-queries.css}">
-  <script th:src="@{/js/game/index.js}" type="module"></script>
 </head>
 
 <body>
 
   <div id="game"></div>
 
+  <script th:src="@{/js/game/index.js}" type="module"></script>
+  <script th:inline="javascript" th:if="${session.usuario != null}">
+    var gamesaveJs = /*[[${gamesave}]]*/
+      sessionStorage.setItem("id", gamesaveJs.id)
+    sessionStorage.setItem("dia", gamesaveJs.dia)
+    sessionStorage.setItem("npc", gamesaveJs.npc)
+    sessionStorage.setItem("moeda_bronze", gamesaveJs.moeda_bronze)
+    sessionStorage.setItem("moeda_prata", gamesaveJs.moeda_prata)
+    sessionStorage.setItem("moeda_ouro", gamesaveJs.moeda_ouro)
+    sessionStorage.setItem("armazem", gamesaveJs.armazem)
+    sessionStorage.setItem("receita", gamesaveJs.receita)
+  </script>
 </body>
 
 </html>

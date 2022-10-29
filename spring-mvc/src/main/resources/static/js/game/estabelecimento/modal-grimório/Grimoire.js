@@ -17,7 +17,7 @@ export default class Grimoire {
           <img draggable="false" 
             title="Poção da palavra ${receita.name.toLowerCase()}" 
             alt="Poção da palavra ${receita.name.toLowerCase()}" 
-            src="images/game/poções/poção-${receita.name.toLowerCase()}.png" 
+            src="../../../images/game/poções/poção-${receita.name.toLowerCase()}.png"
           />
           <b>${receita.name} - ${receita.valor}</b>
         </div>
@@ -45,13 +45,6 @@ export default class Grimoire {
         />
       `;
     }
-    if (sessionStorage.getItem("recipes") != null) {
-      let recipes = JSON.parse(sessionStorage.getItem("recipes"));
-      recipes.push(receita);
-      sessionStorage.setItem("recipes", JSON.stringify(recipes));
-    } else {
-      sessionStorage.setItem("recipes", `[${JSON.stringify(receita)}]`);
-    }
   }
 
   static showOrHide(showOrHide) {
@@ -60,11 +53,17 @@ export default class Grimoire {
     if (showOrHide === "show") {
       //ALTERAR O LIVRO PARA ABERTO
       modalGrimorio.style.display = "block";
-      openGrimorio.setAttribute("src", "images/game/open-grimoire.png");
+      openGrimorio.setAttribute(
+        "src",
+        "../../../images/game/open-grimoire.png"
+      );
     } else if (showOrHide === "hide") {
       //ALTERAR O LIVRO PARA FECHADO
       modalGrimorio.style.display = "none";
-      openGrimorio.setAttribute("src", "images/game/close-grimoire.png");
+      openGrimorio.setAttribute(
+        "src",
+        "../../../images/game/close-grimoire.png"
+      );
     }
   }
 }

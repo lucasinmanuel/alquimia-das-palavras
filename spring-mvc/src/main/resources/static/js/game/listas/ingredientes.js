@@ -4,13 +4,13 @@ export default function ingredientes() {
       id: "jade",
       title: "Planta de Jade",
       alt: "Planta de Jade",
-      src: "images/game/ingredientes/jade.png",
+      src: "../../../images/game/ingredientes/jade.png",
     },
     alecrim: {
       id: "alecrim",
       title: "Planta de Alecrim",
       alt: "Planta de Alecrim",
-      src: "images/game/ingredientes/alecrim.png",
+      src: "../../../images/game/ingredientes/alecrim.png",
     },
   };
 

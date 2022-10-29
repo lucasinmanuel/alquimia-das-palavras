@@ -9,7 +9,7 @@
 <main class="py-3">
   <nav class="mb-4">
     <div class="container">
-      <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/gamesave/select">Voltar ao game save</a>
+      <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/admin/gamesave/select">Voltar ao game save</a>
     </div>
   </nav>
   <section>
@@ -17,11 +17,11 @@
       <div class="row">
         <div class="col-xl-9 mx-auto">
           <h3 th:text="@{'Editar game save '+${gamesave.id}}"></h3>
-          <form th:object="${gamesave}" action="/gamesave/update" method="post" class="border-slide p-4 rounded-3">
+          <form th:object="${gamesave}" action="/admin/gamesave/update" method="post" class="border-slide p-4 rounded-3">
             <input type="hidden" th:field="${gamesave.id}" th:value="${gamesave.id}">
             <div class="mb-2">
               <label for="id_usuario">Id do usuário:</label>
-              <input th:field="${gamesave.id_usuario}" th:value="${gamesave.id_usuario}" type="number" id="id_usuario" class="form-control" required>
+              <input name="id_usuario" th:value="${gamesave.usuario.id}" type="number" id="id_usuario" class="form-control" required>
             </div>
             <div class="mb-2">
               <label for="dia">Dia:</label>

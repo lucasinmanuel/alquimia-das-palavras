@@ -4,29 +4,33 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table
-public class Usuario {
+public class Usuario{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "nome",length = 100,nullable = false)
+    @ManyToOne
+    @JoinColumn(nullable = false,name = "id_cargo")
+    private Cargo cargo;
+    @Column(length = 100,nullable = false)
     private String nome;
-    @Column(name = "apelido",length = 20,unique = true)
+    @Column(length = 20,unique = true)
     private String apelido;
-    @Column(name = "data_cadastro",nullable = false)
+    @Column(nullable = false)
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate data_cadastro;
-    @Column(name = "email",length = 50,nullable = false,unique = true)
+    @Column(length = 50,nullable = false,unique = true)
     private String email;
-    @Column(name = "senha",nullable = false)
+    @Column(nullable = false)
     private String senha;
-    @Column(name = "nacionalidade",length = 30,nullable = false)
+    @Column(length = 30,nullable = false)
     private String nacionalidade;
-    @Column(name = "genero",length = 20,nullable = false)
+    @Column(length = 20,nullable = false)
     private String genero;
-    @Column(name = "data_nascimento",nullable = false)
+    @Column(nullable = false)
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate data_nascimento;
 
@@ -36,6 +40,14 @@ public class Usuario {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Cargo getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
     }
 
     public String getNome() {

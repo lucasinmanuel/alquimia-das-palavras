@@ -23,12 +23,5 @@ export default class Armazem {
     armazemItens.innerHTML += `
       <img id="${item.id}" title="${item.title}" alt="${item.alt}" src="${item.src}" />
     `;
-    if (sessionStorage.getItem("store") != null) {
-      let store = JSON.parse(sessionStorage.getItem("store"));
-      store.push(item);
-      sessionStorage.setItem("store", JSON.stringify(store));
-    } else {
-      sessionStorage.setItem("store", `[${JSON.stringify(item)}]`);
-    }
   }
 }

@@ -9,7 +9,7 @@
 <main class="py-3">
     <nav class="mb-4">
         <div class="container">
-            <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/usuario/select">Voltar ao usuário</a>
+            <a class="btn-roxo d-inline-block py-3 px-4 rounded-pill cursor-pointer text-decoration-none" href="/admin/usuario/select">Voltar ao usuário</a>
         </div>
     </nav>
     <section>
@@ -17,11 +17,20 @@
             <div class="row">
                 <div class="col-xl-9 mx-auto">
                     <h3 th:text="@{'Editar usuário '+${usuario.id}}"></h3>
-                    <form th:object="${usuario}" action="/usuario/update" method="post" class="border-slide p-4 rounded-3">
+                    <form th:object="${usuario}" action="/admin/usuario/update" method="post" class="border-slide p-4 rounded-3">
                         <input type="hidden" th:field="${usuario.id}" th:value="${usuario.id}">
                         <div class="mb-2">
                             <label for="nome">Nome:</label>
                             <input th:field="${usuario.nome}" th:value="${usuario.nome}" type="text" id="nome" class="form-control" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="cargo">Cargo:</label>
+                            <select name="cargo" class="form-select" id="cargo" required>
+                                <option th:if="${usuario.cargo.id == 1}" selected value="1">Administrador</option>
+                                <option th:if="${usuario.cargo.id == 1}" value="2">Usuário</option>
+                                <option th:if="${usuario.cargo.id == 2}" selected value="2">Usuário</option>
+                                <option th:if="${usuario.cargo.id == 2}" value="1">Administrador</option>
+                            </select>
                         </div>
                         <div class="mb-2">
                             <label for="data_cadastro">Data de cadastro:</label>
