@@ -8,7 +8,9 @@ import br.com.alquimiadaspalavras.service.GameSaveService;
 import br.com.alquimiadaspalavras.utils.PasswordEncoderUtils;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.apache.coyote.Response;
 import org.springframework.boot.web.servlet.server.Session;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -148,9 +150,9 @@ public class PagesController {
         }
         return "game/index";
     }
-
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
     @PostMapping(path = "/game/save")
+    @ResponseStatus(code = HttpStatus.CREATED, reason = "CREATED")
     public String save(@RequestBody String save,HttpSession httpSession){
         Gson gson = new Gson();
         JsonObject jsonObject = gson.fromJson(save, JsonObject.class);
@@ -175,6 +177,6 @@ public class PagesController {
         gameSave.setArmazem(jsonObject.get("store").getAsJsonArray().toString());
         gameSave.setReceita(jsonObject.get("recipes").getAsJsonArray().toString());
         gameSaveRepository.save(gameSave);
-        return "redirect:/pages/game";
+        return "Salvamento efetuado!";
     }
 }

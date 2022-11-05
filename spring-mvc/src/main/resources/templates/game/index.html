@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" th:href="@{/css/game/general-style.css}" />
   <link rel="stylesheet" th:href="@{/css/game/Cenario.css}">
   <link rel="stylesheet" th:href="@{/css/game/Menus.css}" />
@@ -23,15 +24,14 @@
 
   <script th:src="@{/js/game/index.js}" type="module"></script>
   <script th:inline="javascript" th:if="${session.usuario != null}">
-    var gamesaveJs = /*[[${gamesave}]]*/
-      sessionStorage.setItem("id", gamesaveJs.id)
-    sessionStorage.setItem("dia", gamesaveJs.dia)
-    sessionStorage.setItem("npc", gamesaveJs.npc)
-    sessionStorage.setItem("moeda_bronze", gamesaveJs.moeda_bronze)
-    sessionStorage.setItem("moeda_prata", gamesaveJs.moeda_prata)
-    sessionStorage.setItem("moeda_ouro", gamesaveJs.moeda_ouro)
-    sessionStorage.setItem("armazem", gamesaveJs.armazem)
-    sessionStorage.setItem("receita", gamesaveJs.receita)
+    sessionStorage.setItem("id", /*[[${gamesave.id}]]*/)
+    sessionStorage.setItem("dia", /*[[${gamesave.dia}]]*/)
+    sessionStorage.setItem("npc", /*[[${gamesave.npc}]]*/)
+    sessionStorage.setItem("moeda_bronze", /*[[${gamesave.moeda_bronze}]]*/)
+    sessionStorage.setItem("moeda_prata", /*[[${gamesave.moeda_prata}]]*/)
+    sessionStorage.setItem("moeda_ouro", /*[[${gamesave.moeda_ouro}]]*/)
+    sessionStorage.setItem("armazem", /*[[${gamesave.armazem}]]*/)
+    sessionStorage.setItem("receita", /*[[${gamesave.receita}]]*/)
   </script>
 </body>
 

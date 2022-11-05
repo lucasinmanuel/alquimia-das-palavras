@@ -1,7 +1,7 @@
 @font-face {
   font-family: "open-dyslexic";
   src: url("../../fonts/opendyslexic-regular-webfont.woff2") format("woff2"),
-  url("../../fonts/opendyslexic-regular-webfont.woff") format("woff");
+    url("../../fonts/opendyslexic-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -28,3 +28,193 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/*JOGO DESCUBRA*/
+#close-modal-generic {
+  position: absolute;
+  right: 10vw;
+  top: 5vh;
+  display: none;
+}
+
+.box {
+  all: unset;
+  width: 18%;
+  border: 3px solid #453953;
+  border-radius: 6px;
+  font-size: 2rem;
+  text-align: center;
+  transition: 0.3s;
+  margin: 0px 1px;
+  text-transform: uppercase;
+  background-color: #453953;
+}
+
+.tem {
+  border: 2px solid #3aa394;
+  background-color: #3aa394;
+  color: whitesmoke;
+}
+
+.naoTem {
+  border: 2px solid #312a2c;
+  background-color: #312a2c;
+  color: whitesmoke;
+}
+
+.outra {
+  border: 2px solid #d3ad69;
+  background-color: #d3ad69;
+  color: whitesmoke;
+}
+
+.focus {
+  border-bottom: 6px solid #453953;
+  background-color: transparent;
+}
+
+/* Modal Tutorial*/
+.icon-help {
+  position: absolute;
+  bottom: 40px;
+  left: 340px;
+  background-color: #453953;
+}
+
+#modal-tutorial {
+  display: none;
+  width: 40vw;
+  height: 90vh;
+  background-color: #975a5e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+
+#modal-tutorial .scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 1.5rem;
+}
+
+.scroll p {
+  font-size: 1.8rem;
+}
+
+.groupinput:not(:last-of-type) {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #25161b;
+  margin-bottom: 25px;
+}
+
+.groupinput .word-example {
+  display: flex;
+}
+
+.groupinput span {
+  font-size: 1.6rem;
+  text-align: center;
+  width: 7%;
+  height: 60px;
+  line-height: 60px;
+  margin-right: 5px;
+  border-radius: 8px;
+  border: 2px solid #453953;
+  font-weight: bold;
+  background-color: #f3cba5;
+}
+
+.info-example span {
+  font-size: 1.4rem;
+  width: 6%;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.sucess {
+  border: 2px solid #3aa394 !important;
+  background-color: #3aa394 !important;
+  color: whitesmoke;
+}
+
+.fail {
+  border: 2px solid #312a2c !important;
+  background-color: #312a2c !important;
+  color: whitesmoke;
+}
+
+.other {
+  border: 2px solid #d3ad69 !important;
+  background-color: #d3ad69 !important;
+  color: whitesmoke;
+}
+
+/* Fim Modal Tutorial*/
+
+/* Modal ganhou/perdeu */
+.modal_ganhou {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(145, 126, 126, 0.47);
+  transform: translateY(-50%);
+}
+
+.modal_perdeu {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(145, 126, 126, 0.47);
+  transform: translateY(-50%);
+}
+
+.modal-endgame {
+  width: 40vw;
+  background-color: #975a5e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.modal-endgame p {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.wrapper-button {
+  text-align: center;
+}
+
+.wrapper-button button {
+  border-radius: 15%;
+  border: 2px solid #25161b;
+  background-color: transparent;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.wrapper-button button:hover {
+  background-color: #453953;
+  color: antiquewhite;
+}
+
+/* Fim Modal ganhou/perdeu */

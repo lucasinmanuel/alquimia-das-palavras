@@ -27,7 +27,7 @@ export default class Save {
     const silverCoin = sessionStorage.getItem("moeda_prata");
     const goldCoin = sessionStorage.getItem("moeda_ouro");
     const store = document.querySelectorAll("#armazem-itens img");
-    const ingredientes = document.querySelectorAll(".ingredientes img");
+    const ingredienteNomeValor = document.querySelectorAll(".receita-title b");
     const prepTime = document.querySelectorAll(".prepTime span");
     let storeItens = [];
     store.forEach((value, i) => {
@@ -39,21 +39,34 @@ export default class Save {
       };
     });
     let recipes = [];
-    ingredientes.forEach((value, i) => {
-      recipes[i] = {
-        name: value.innerHTML.split("-")[0].replace(" ", ""),
+    ingredienteNomeValor.forEach((value, index) => {
+      let name = value.innerHTML.split("-")[0].replace(" ", "");
+      recipes[index] = {
+        name: name,
         valor: value.innerHTML.split("-")[1].replace(" ", ""),
-        ingredientes: [
-          {
-            id: ingredientes[i].id,
-            title: ingredientes[i].title,
-            alt: ingredientes[i].alt,
-            src: ingredientes[i].src,
-          },
-        ],
-        tempoPreparo: prepTime[i].innerHTML,
+        tempoPreparo: prepTime[index].innerHTML,
+      };
+      const ingredientes = document.querySelectorAll(
+        `#qtdIngrediente-${name.toLowerCase()} img`
+      );
+      let array_ingredientes = [];
+      ingredientes.forEach((img) => {
+        array_ingredientes.push({
+          title: img.title,
+          alt: img.alt,
+          src: img.src,
+        });
+      });
+      recipes[index] = {
+        ...recipes[index],
+        ingredientes: [...array_ingredientes],
       };
     });
+
+    console.log("Receitas: ");
+    console.log(recipes);
+    console.log("");
+    console.log("Armazem: ");
     console.log(storeItens);
     fetch("http://localhost:8080/pages/game/save", {
       method: "POST",
@@ -70,8 +83,8 @@ export default class Save {
       }),
     })
       .then((resonse) => resonse.json())
-      .then((json) => {
-        console.log(json);
+      .then(() => {
+        alert("Salvamento efetuado!");
       });
   }
 }

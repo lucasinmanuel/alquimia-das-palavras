@@ -72,6 +72,14 @@ function modalStore(armazem) {
   for (let i in armazem) {
     Armazem.add(armazem[i]);
   }
+
+  var item = {
+    title: "descubra",
+    alt: "descubra",
+    id: "descubra",
+    src: "http://localhost:8080/images/game/itens/descubra.png",
+  };
+  Armazem.add(item);
 }
 
 function modalGrimoire(receita) {
@@ -88,7 +96,6 @@ function modalGrimoire(receita) {
 
   //adicionando receitas ao grimorio
   for (let i in receita) {
-    console.log(receita[i]);
     Grimoire.add(receita[i]);
   }
 }
