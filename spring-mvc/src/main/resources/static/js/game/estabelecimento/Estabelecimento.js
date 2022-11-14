@@ -30,7 +30,8 @@ export default class EstabelecimentoAlquimico {
             </div>
             <div id="modal-transition"></div>
             <div id="modal-generic"></div>
-            <audio loop id="background-music">
+            <audio id="background-music">
+              <source src="../../../audio/Medieval-Music.mp3" type="audio/mp3">
             </audio>
         `;
 

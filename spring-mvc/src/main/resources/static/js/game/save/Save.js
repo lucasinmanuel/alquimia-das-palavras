@@ -72,7 +72,7 @@ export default class Save {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        id: Number(sessionStorage.getItem("id")),
+        id: sessionStorage.getItem("id"),
         day: day,
         whichNpc: whichNpc,
         copper_coin: copperCoin,
@@ -83,8 +83,8 @@ export default class Save {
       }),
     })
       .then((resonse) => resonse.json())
-      .then(() => {
-        alert("Salvamento efetuado!");
+      .then((data) => {
+        console.log(data.status);
       });
   }
 }

@@ -34,11 +34,13 @@ public class PagesController {
 
     private final GameSaveService gameSaveService = new GameSaveService();
     private final UsuarioRepository usuarioRepository;
+    private final ProfilePictureRepository profilePictureRepository;
     private final UsuarioProfilePictureRepository usuarioprofilePictureRepository;
     private final GameSaveRepository gameSaveRepository;
 
-    public PagesController(UsuarioRepository usuarioRepository, UsuarioProfilePictureRepository usuarioprofilePictureRepository, GameSaveRepository gameSaveRepository) {
+    public PagesController(UsuarioRepository usuarioRepository, ProfilePictureRepository profilePictureRepository, UsuarioProfilePictureRepository usuarioprofilePictureRepository, GameSaveRepository gameSaveRepository) {
         this.usuarioRepository = usuarioRepository;
+        this.profilePictureRepository = profilePictureRepository;
         this.usuarioprofilePictureRepository = usuarioprofilePictureRepository;
         this.gameSaveRepository = gameSaveRepository;
     }
@@ -59,6 +61,25 @@ public class PagesController {
         usuario.setCargo(cargo);
 
         Usuario usuarioDb = usuarioRepository.saveAndFlush(usuario);
+
+        ProfilePicture picture_default = profilePictureRepository.findByNome("default");
+        ProfilePicture picture_book = profilePictureRepository.findByNome("book");
+
+        UsuarioProfilePicture usuarioProfilePicture_1 = new UsuarioProfilePicture();
+        usuarioProfilePicture_1.setActive(true);
+        usuarioProfilePicture_1.setProfilePicture(picture_default);
+        usuarioProfilePicture_1.setUsuario(usuarioDb);
+
+        UsuarioProfilePicture usuarioProfilePicture_2 = new UsuarioProfilePicture();
+        usuarioProfilePicture_2.setActive(false);
+        usuarioProfilePicture_2.setProfilePicture(picture_book);
+        usuarioProfilePicture_2.setUsuario(usuarioDb);
+
+        List<UsuarioProfilePicture> usuarioProfilePictureList = new ArrayList<>();
+        usuarioProfilePictureList.add(usuarioProfilePicture_1);
+        usuarioProfilePictureList.add(usuarioProfilePicture_2);
+
+        usuarioprofilePictureRepository.saveAll(usuarioProfilePictureList);
 
         return "redirect:/pages/login";
     }
@@ -105,7 +126,12 @@ public class PagesController {
         List<UsuarioProfilePicture> usuarioProfilePictures = usuarioprofilePictureRepository.findAllByUsuario(usuario);
         List<ProfilePicture> profilePictures = new ArrayList<>();
         for(UsuarioProfilePicture usuarioProfilePicture : usuarioProfilePictures){
-            profilePictures.add(usuarioProfilePicture.getProfilePicture());
+            if(usuarioProfilePicture.getActive()){
+                session.setAttribute("active_profilepicture",usuarioProfilePicture.getProfilePicture());
+                profilePictures.add(usuarioProfilePicture.getProfilePicture());
+            }else {
+                profilePictures.add(usuarioProfilePicture.getProfilePicture());
+            }
         }
         session.setAttribute("profilePictures",profilePictures);
 
@@ -153,7 +179,7 @@ public class PagesController {
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
     @PostMapping(path = "/game/save")
     @ResponseStatus(code = HttpStatus.CREATED, reason = "CREATED")
-    public String save(@RequestBody String save,HttpSession httpSession){
+    public void save(@RequestBody String save,HttpSession httpSession){
         Gson gson = new Gson();
         JsonObject jsonObject = gson.fromJson(save, JsonObject.class);
 
@@ -177,6 +203,14 @@ public class PagesController {
         gameSave.setArmazem(jsonObject.get("store").getAsJsonArray().toString());
         gameSave.setReceita(jsonObject.get("recipes").getAsJsonArray().toString());
         gameSaveRepository.save(gameSave);
-        return "Salvamento efetuado!";
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
+    @PostMapping(path = "/game/save/delete")
+    @ResponseStatus(code = HttpStatus.OK, reason = "OK")
+    public void deleteSave(@RequestBody String body){
+        Gson gson = new Gson();
+        JsonObject jsonObject = gson.fromJson(body, JsonObject.class);
+        gameSaveRepository.deleteById(jsonObject.get("id").getAsInt());
     }
 }

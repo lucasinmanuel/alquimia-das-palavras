@@ -2,18 +2,12 @@ package br.com.alquimiadaspalavras.service;
 
 import br.com.alquimiadaspalavras.enums.RoleName;
 import br.com.alquimiadaspalavras.model.Cargo;
-import br.com.alquimiadaspalavras.model.Conquista;
 import br.com.alquimiadaspalavras.model.ProfilePicture;
 import br.com.alquimiadaspalavras.repository.CargoRepository;
-import br.com.alquimiadaspalavras.repository.ConquistaRepository;
 import br.com.alquimiadaspalavras.repository.ProfilePictureRepository;
-import net.bytebuddy.implementation.bind.annotation.Super;
-import org.springframework.context.annotation.Role;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.support.MultipartFilter;
 
 import java.io.File;
 import java.io.IOException;

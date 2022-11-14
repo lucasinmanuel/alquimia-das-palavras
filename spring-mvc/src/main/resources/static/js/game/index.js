@@ -3,7 +3,6 @@ import Armazem from "./estabelecimento/modal-armazem/Armazem.js";
 import Caldeirao from "./estabelecimento/menus/caldeirão/Caldeirao.js";
 import Grimoire from "./estabelecimento/modal-grimório/Grimoire.js";
 import InitFases from "./fases/initFases/FasesController.js";
-import Receitas from "./estabelecimento/modal-grimório/Receitas.js";
 import PainelMoedas from "./estabelecimento/painel-moedas/PainelMoedas.js";
 import Status from "./estabelecimento/status/Status.js";
 import Save from "./save/Save.js";
@@ -29,6 +28,7 @@ function loadGame() {
   modalGrimoire(receita);
   startGame(dia, npc);
   gameSave();
+  backgroundMusic();
 
   Status.setDay(dia);
   PainelMoedas.setMoedaBronze(moeda_bronze);
@@ -120,12 +120,26 @@ function gameSave() {
     alert("Jogo salvo");
   });
 }
-backgroundMusic();
+
 function backgroundMusic() {
   const backgroundMusic = document.getElementById("background-music");
-  backgroundMusic.innerHTML = `
-    <source src="../../../audio/Medieval-Music.mp3" type="audio/mp3">
-  `;
-  backgroundMusic.volume = "0.1";
-  backgroundMusic.play();
+  backgroundMusic.loop = true;
+  backgroundMusic.volume = "0.05";
+  backgroundMusic.autoplay = true;
+  backgroundMusic.load();
+
+  //MUTANDO MÚSICA DE FUNDO
+  const btnMusic = document.getElementById("btn-music");
+  btnMusic.addEventListener("click", () => {
+    alert("oi");
+    if (btnMusic.children[0].src === "../../../images/game/icons/sound.png") {
+      backgroundMusic.muted = true;
+      btnMusic.children[0].src = "../../../images/game/icons/sound-muted.png";
+    } else if (
+      btnMusic.children[0].src === "../../../images/game/icons/sound-muted.png"
+    ) {
+      backgroundMusic.muted = false;
+      btnMusic.children[0].src = "../../../images/game/icons/sound.png";
+    }
+  });
 }

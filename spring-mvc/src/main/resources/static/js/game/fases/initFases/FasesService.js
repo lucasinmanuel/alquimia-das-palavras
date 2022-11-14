@@ -1,16 +1,16 @@
 import UsarItens from "./UsarItens.js";
 
 export default class Npc {
-  load(npc) {
+  load(npc, day, index_npc) {
     let areaFases = document.getElementById("area-fases");
+    this.day = day;
+    this.index_npc = index_npc;
     areaFases.innerHTML = `
         <img id="npc" src="../../../images/game/npcs/${npc}" draggable="false" />
         <div id="caixa-dialogo">
             <p></p>
             <div id="caixa-escolhas"></div>
-            <!--<audio id="audio">
-              <source src="../../../audio/audio.ogg" type="audio/ogg">
-            </audio>-->
+            <audio id="audio-npc"></audio>
         </div>
     `;
   }
@@ -25,6 +25,8 @@ export default class Npc {
   }
 
   start(palavraEsquecida, tipoMoeda, qtdMoeda, falasNpc) {
+    let day = this.day;
+    let index_npc = this.index_npc;
     let spriteNPC = document.getElementById("npc");
     let delayNPC = 1000;
     setTimeout(() => {
@@ -33,11 +35,12 @@ export default class Npc {
 
     let caixaDialogo = document.querySelector("#caixa-dialogo p");
     let caixaEscolhas = document.getElementById("caixa-escolhas");
-    // let npcAudio = document.getElementById("audio");
 
     let indexLetra = 0;
     let indexDialogo = 0;
     let tipoEscolha = "A";
+    let controlAudio_fala = true;
+    let IndexAudio_fala = 1;
 
     let delayCaixaDialogo = 2000 + delayNPC;
 
@@ -52,7 +55,8 @@ export default class Npc {
       if (pTipoEscolha === "A") {
         dialogoNPC = falasNpc[iDialogo].npc_A;
         escolhasUser = falasNpc[iDialogo].user_A;
-      } else if (pTipoEscolha === "B") {
+      }
+      if (pTipoEscolha === "B") {
         dialogoNPC = falasNpc[iDialogo].npc_B;
         escolhasUser = falasNpc[iDialogo].user_B;
       }
@@ -60,11 +64,22 @@ export default class Npc {
       if (dialogoNPC != undefined) {
         //ADICIONAR AS LETRAS NA CAIXA DE DIALOGO
         caixaDialogo.innerHTML += dialogoNPC.charAt(iLetra);
-        // npcAudio.play();
+
+        //INICIANDO AUDIO
+        if (controlAudio_fala) {
+          controlAudio_fala = false;
+          let audioNpc = document.getElementById("audio-npc");
+          audioNpc.innerHTML = `
+            <source src="../../../audio/fases/dia-${day}/npc-${index_npc}/npc-${index_npc}-fala-${pTipoEscolha.toLowerCase()}-${IndexAudio_fala}.mp3" type="audio/mp3">
+          `;
+          audioNpc.autoplay = true;
+          audioNpc.load();
+          IndexAudio_fala++;
+        }
 
         if (iLetra < dialogoNPC.length) {
-          indexLetra++;
           setTimeout(() => {
+            indexLetra++;
             digitarDialogo(indexLetra, iDialogo, pTipoEscolha);
           }, 50);
         } else {
@@ -91,6 +106,8 @@ export default class Npc {
             let dropItem = document.getElementById("drop-item");
             usarItens.dropItem(dropItem);
           }
+
+          controlAudio_fala = true;
         }
       } else {
         //ANIMAÇÃO DE SÁIDA DO NPC
@@ -124,6 +141,7 @@ export default class Npc {
             case "B":
               tipoEscolha = "B";
               digitarDialogo(indexLetra, indexDialogo, tipoEscolha);
+              break;
             case "":
               digitarDialogo(indexLetra, indexDialogo, tipoEscolha);
               break;

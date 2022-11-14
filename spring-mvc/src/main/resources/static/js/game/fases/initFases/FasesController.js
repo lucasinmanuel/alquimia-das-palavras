@@ -32,7 +32,7 @@ export default class InitFases {
         i = 0;
       } else {
         if (fasesService.checkNpc()) {
-          fasesService.load(npcs[i].info.img_npc);
+          fasesService.load(npcs[i].info.img_npc, day, i + 1);
           fasesService.start(
             npcs[i].info.palavraOculta,
             npcs[i].info.tipoMoeda,

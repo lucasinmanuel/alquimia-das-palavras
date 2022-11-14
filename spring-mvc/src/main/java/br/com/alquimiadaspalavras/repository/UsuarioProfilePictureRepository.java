@@ -10,4 +10,6 @@ import java.util.Optional;
 
 public interface UsuarioProfilePictureRepository extends JpaRepository<UsuarioProfilePicture,Integer> {
     List<UsuarioProfilePicture> findAllByUsuario(Usuario usuario);
+    UsuarioProfilePicture findByActivated(Boolean active);
+    UsuarioProfilePicture findByUsuarioAndProfilePicture(Usuario usuario,ProfilePicture profilePicture);
 }

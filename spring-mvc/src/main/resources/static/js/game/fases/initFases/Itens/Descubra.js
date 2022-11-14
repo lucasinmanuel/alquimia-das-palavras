@@ -121,7 +121,7 @@ export default class Itens {
         linhaSelecionada[0].children[y].addEventListener("keydown", (e) => {
           //AVANÇA O FOCUS AO DIGITAR
           if (
-            e.key.match(/[A-Za-z]/) &&
+            e.key.match(/[A-Za-zçÇ]/) &&
             e.target.value !== "" &&
             e.key !== "Backspace" &&
             e.key !== "Tab"
