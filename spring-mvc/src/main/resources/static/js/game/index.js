@@ -11,7 +11,6 @@ loadGame();
 
 function loadGame() {
   let dia = Number(sessionStorage.getItem("dia"));
-  let npc = Number(sessionStorage.getItem("npc"));
   let moeda_bronze = Number(sessionStorage.getItem("moeda_bronze"));
   let moeda_prata = Number(sessionStorage.getItem("moeda_prata"));
   let moeda_ouro = Number(sessionStorage.getItem("moeda_ouro"));
@@ -26,7 +25,7 @@ function loadGame() {
   caldeirao();
   modalStore(armazem);
   modalGrimoire(receita);
-  startGame(dia, npc);
+  startGame();
   gameSave();
   backgroundMusic();
 
@@ -100,11 +99,13 @@ function modalGrimoire(receita) {
   }
 }
 
-function startGame(dia, npc) {
+function startGame() {
   //INICIAR FASES
   var placaLoja = document.querySelector("#status img");
-
   placaLoja.addEventListener("click", () => {
+    let dia = Number(sessionStorage.getItem("dia"));
+    let npc = Number(sessionStorage.getItem("npc"));
+    console.log(dia);
     if (placaLoja.getAttribute("src").includes("placa-fechado.png")) {
       placaLoja.setAttribute("src", "../../../images/game/placa-aberto.png");
       InitFases.selecionarDia(dia, npc);

@@ -31,6 +31,10 @@ export default class Caldeirao {
         this.insideCaldeirao = []; //LIMPAR CALDEIRÃO
         this.potionComprar();
         break;
+      case "alecrim,jade":
+        this.insideCaldeirao = []; //LIMPAR CALDEIRÃO
+        this.potionVender();
+        break;
       default:
         this.insideCaldeirao = [];
         this.caldeirao.setAttribute(
@@ -77,5 +81,24 @@ export default class Caldeirao {
       this.barraProgress.style.width = "0%";
       Armazem.add(potionsList().comprar);
     }, 5000);
+  }
+
+  potionVender() {
+    this.caldeirao.setAttribute(
+      "src",
+      "../../../images/game/sprite-caldeirão/caldeirão-alecrim-jade.png"
+    );
+
+    this.barraProgress.style.transition = "8s";
+    this.barraProgress.style.width = "100%";
+    setTimeout(() => {
+      this.caldeirao.setAttribute(
+        "src",
+        "../../../images/game/sprite-caldeirão/caldeirão.png"
+      );
+      this.barraProgress.style.transition = "none";
+      this.barraProgress.style.width = "0%";
+      Armazem.add(potionsList().vender);
+    }, 8000);
   }
 }

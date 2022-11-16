@@ -12,6 +12,12 @@ export default function potions() {
       alt: "Poção da palavra comprar",
       src: "../../../images/game/poções/poção-comprar.png",
     },
+    vender: {
+          id: "potion-vender",
+          title: "Poção da palavra vender",
+          alt: "Poção da palavra vender",
+          src: "../../../images/game/poções/poção-vender.png",
+        },
   };
 
   return potions;
