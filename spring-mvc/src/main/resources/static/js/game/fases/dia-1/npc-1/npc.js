@@ -22,7 +22,7 @@ export default function npc() {
       },
       {
         npc_A:
-          "Eu estava negociando uma compra e percebi que não me lembrava de algo.",
+          "Eu estava negociando com um vendedor e percebi que não me lembrava de algo.",
         user_A:
           "<button>Sim, a sensação de esquecimento é um sintoma comum. Conte-me mais.</button>",
         npc_B: "Ah! Tem razão, qual é o preço do seu trabalho?",
